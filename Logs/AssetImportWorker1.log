@@ -1,0 +1,606 @@
+Using pre-set license
+Built from '2020.3/china_unity/release' branch; Version is '2020.3.13f1c1 (93b9df9a3ddc) revision 9681375'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Pro; OS build 19041.685; Version 2004; 64bit' Language: 'zh' Physical Memory: 16229 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.13f1c1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker1
+-projectPath
+C:/TYXfile/unity2020/Project/ARPG
+-logFile
+Logs/AssetImportWorker1.log
+-srvPort
+50548
+Successfully changed project path to: C:/TYXfile/unity2020/Project/ARPG
+C:/TYXfile/unity2020/Project/ARPG
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 126.93 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.13f1c1 (93b9df9a3ddc)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.13f1c1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/TYXfile/unity2020/Project/ARPG/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1070 (ID=0x1ba1)
+    Vendor:   
+    VRAM:     8082 MB
+    Driver:   30.0.14.7111
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.13f1c1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.13f1c1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.13f1c1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56120
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.13f1c1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001979 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 102.87 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.979 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.011319 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 116.09 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  6.625 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 2.26 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3464 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 171.0 MB.
+System memory in use after: 171.0 MB.
+
+Unloading 87 unused Assets to reduce memory usage. Loaded Objects now: 3930.
+Total: 60.055200 ms (FindLiveObjects: 0.916300 ms CreateObjectMapping: 0.427300 ms MarkObjects: 58.319400 ms  DeleteObjects: 0.389400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/New Terrain.asset
+  artifactKey: Guid(6183fe84d5eec6a489b7f210f54f66a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/New Terrain.asset using Guid(6183fe84d5eec6a489b7f210f54f66a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2f5223985bce13a165a55196b5d9589') in 0.101167 seconds 
+  Import took 0.112774 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 417.326006 seconds.
+  path: Assets/AssetResources/VFX
+  artifactKey: Guid(0547b703ff6944a44b2e880d87ca0fa5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX using Guid(0547b703ff6944a44b2e880d87ca0fa5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0dd2be82ee9e9bb746679957ddac1364') in 0.005982 seconds 
+  Import took 0.011840 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.008674 seconds.
+  path: Assets/AssetResources/VFX
+  artifactKey: Guid(0547b703ff6944a44b2e880d87ca0fa5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX using Guid(0547b703ff6944a44b2e880d87ca0fa5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0dd2be82ee9e9bb746679957ddac1364') in 0.002047 seconds 
+  Import took 0.007259 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.576750 seconds.
+  path: Assets/AssetResources/VFX/13律动的马赛克
+  artifactKey: Guid(64cdbb24227f2c442a3219da01b93e45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/13律动的马赛克 using Guid(64cdbb24227f2c442a3219da01b93e45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b240ac4402f99663e47af2da3715e65') in 0.013609 seconds 
+  Import took 0.019976 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.460705 seconds.
+  path: Assets/AssetResources/VFX/Orange
+  artifactKey: Guid(64cdbb24227f2c442a3219da01b93e45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/Orange using Guid(64cdbb24227f2c442a3219da01b93e45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '803a11fa85d37fdb2c8233f06001a1b0') in 0.006217 seconds 
+  Import took 0.011922 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.734324 seconds.
+  path: Assets/AssetResources/VFX/Prefab
+  artifactKey: Guid(ec098313bd0fe084db35c3b09210e5df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/Prefab using Guid(ec098313bd0fe084db35c3b09210e5df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23c6c05a0390435fd6f2d462cda7cffa') in 0.006598 seconds 
+  Import took 0.012297 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.371662 seconds.
+  path: Assets/AssetResources/VFX/LaserBeam
+  artifactKey: Guid(8faefeef7bf681347b8c129e9cbea5f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/LaserBeam using Guid(8faefeef7bf681347b8c129e9cbea5f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c786c54c54d3648ff8f9465cd8437edb') in 0.007822 seconds 
+  Import took 0.013664 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000711 seconds.
+  path: Assets/AssetResources/VFX/LaserBeam
+  artifactKey: Guid(8faefeef7bf681347b8c129e9cbea5f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/LaserBeam using Guid(8faefeef7bf681347b8c129e9cbea5f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c786c54c54d3648ff8f9465cd8437edb') in 0.002133 seconds 
+  Import took 0.007463 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.072560 seconds.
+  path: Assets/AssetResources/VFX/LaserBeam/Flash2.blend
+  artifactKey: Guid(a794fb1182ea3c24b97d70990d1ce28c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/LaserBeam/Flash2.blend using Guid(a794fb1182ea3c24b97d70990d1ce28c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10fc38c1e2a49b25a97ccdd52099f72e') in 0.287913 seconds 
+  Import took 0.293497 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000353 seconds.
+  path: Assets/AssetResources/VFX/LaserBeam/Laser.mat
+  artifactKey: Guid(bd7bb12b4f6c9954db2ad82eb269b546) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/LaserBeam/Laser.mat using Guid(bd7bb12b4f6c9954db2ad82eb269b546) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff4f9ca87e3877be7ca02d72679dd117') in 0.040480 seconds 
+  Import took 0.045537 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000367 seconds.
+  path: Assets/AssetResources/VFX/LaserBeam/Flash2_1.psd
+  artifactKey: Guid(c6e3806937a44cb4a96bae7f5cbf12bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/LaserBeam/Flash2_1.psd using Guid(c6e3806937a44cb4a96bae7f5cbf12bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c57ea17b95813c07481780de2948c53c') in 0.019199 seconds 
+  Import took 0.024430 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000345 seconds.
+  path: Assets/AssetResources/VFX/LaserBeam/Flash3.mat
+  artifactKey: Guid(52081d53524c9b7408636f976e27e939) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/LaserBeam/Flash3.mat using Guid(52081d53524c9b7408636f976e27e939) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '648d8834bbe5afaf73fbdca18fcc6da5') in 0.012273 seconds 
+  Import took 0.018314 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000331 seconds.
+  path: Assets/AssetResources/VFX/LaserBeam/Flash2_2.tga
+  artifactKey: Guid(ee231c4be5e6cb648a4426879dc66a15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/LaserBeam/Flash2_2.tga using Guid(ee231c4be5e6cb648a4426879dc66a15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba2e1207d36cbf506c6701d58ffa7683') in 0.015263 seconds 
+  Import took 0.020626 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000360 seconds.
+  path: Assets/AssetResources/VFX/LaserBeam/Flash2_2.psd
+  artifactKey: Guid(b07b1a7efcbf2d644ba8397ab835f70a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/LaserBeam/Flash2_2.psd using Guid(b07b1a7efcbf2d644ba8397ab835f70a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c79d8a4a62fced1722e2e429c04cbc43') in 0.008951 seconds 
+  Import took 0.014337 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000349 seconds.
+  path: Assets/AssetResources/VFX/LaserBeam/laser.psd
+  artifactKey: Guid(134e163e98f78e54688dab61c5a6f005) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/LaserBeam/laser.psd using Guid(134e163e98f78e54688dab61c5a6f005) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b90c2a8612237f9f6415a30dcd4ea41') in 0.011229 seconds 
+  Import took 0.016659 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000366 seconds.
+  path: Assets/AssetResources/VFX/LaserBeam/laser.tga
+  artifactKey: Guid(bc929aa7a72064b409a034287d4a23d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/LaserBeam/laser.tga using Guid(bc929aa7a72064b409a034287d4a23d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a79f3d207668c5ce52e0e57832d6604') in 0.011211 seconds 
+  Import took 0.016972 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000354 seconds.
+  path: Assets/AssetResources/VFX/LaserBeam/Flash2.mat
+  artifactKey: Guid(23738db72006b0345a12911d4791af80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/LaserBeam/Flash2.mat using Guid(23738db72006b0345a12911d4791af80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '218395867bc86576286768556c4809db') in 0.011348 seconds 
+  Import took 0.017198 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000348 seconds.
+  path: Assets/AssetResources/VFX/LaserBeam/Flash4.mat
+  artifactKey: Guid(3d0b258c8442b0440ab93af2c8072c0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/LaserBeam/Flash4.mat using Guid(3d0b258c8442b0440ab93af2c8072c0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'abc9ad1ec289c6dbf0db3742ab02e244') in 0.011762 seconds 
+  Import took 0.018397 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000386 seconds.
+  path: Assets/AssetResources/VFX/LaserBeam/LaserBeam.prefab
+  artifactKey: Guid(05af802119fbb604bb3ff691c556e57c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/LaserBeam/LaserBeam.prefab using Guid(05af802119fbb604bb3ff691c556e57c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5541d86839fd56ce4f91e040eb1e5380') in 0.009896 seconds 
+  Import took 0.016132 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 79.697423 seconds.
+  path: Assets/AssetResources/VFX/LaserBeam/Flare21.png
+  artifactKey: Guid(74885079b74a04346a86bf6f693f78a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/LaserBeam/Flare21.png using Guid(74885079b74a04346a86bf6f693f78a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be79e44898b8d7ec9b3dbf12b737a6fb') in 0.017923 seconds 
+  Import took 0.024310 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.012148 seconds.
+  path: Assets/AssetResources/VFX/LaserBeam/Point12.png
+  artifactKey: Guid(fe0e50eee4427434ca648fe7e7327c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/LaserBeam/Point12.png using Guid(fe0e50eee4427434ca648fe7e7327c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7576b6fa6a3edb6bd6915fb733b9f896') in 0.010263 seconds 
+  Import took 0.016955 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 20.149983 seconds.
+  path: Assets/AssetResources/VFX/LaserBeam/Flare21.png
+  artifactKey: Guid(74885079b74a04346a86bf6f693f78a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/LaserBeam/Flare21.png using Guid(74885079b74a04346a86bf6f693f78a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85915a2ab545e4753aadd91c8ad68f00') in 0.009137 seconds 
+  Import took 0.014259 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007018 seconds.
+  path: Assets/AssetResources/VFX/LaserBeam/Flare21.png
+  artifactKey: Guid(74885079b74a04346a86bf6f693f78a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/LaserBeam/Flare21.png using Guid(74885079b74a04346a86bf6f693f78a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85915a2ab545e4753aadd91c8ad68f00') in 0.006085 seconds 
+  Import took 0.012067 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 35.830186 seconds.
+  path: Assets/AssetResources/VFX/LaserBeam/spark.mat
+  artifactKey: Guid(de35fa71fe6671549948e31e26fe9f10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/LaserBeam/spark.mat using Guid(de35fa71fe6671549948e31e26fe9f10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '047c16ec0e41a89954ce6d69854c4b1d') in 0.012425 seconds 
+  Import took 0.017725 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.133607 seconds.
+  path: Assets/AssetResources/VFX/LaserBeam/LaserBeam.shader
+  artifactKey: Guid(0462bd0e57166c14b86b7d87a26184a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/LaserBeam/LaserBeam.shader using Guid(0462bd0e57166c14b86b7d87a26184a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90399d7dd9b9b58da2a789007a4d0c8e') in 0.005286 seconds 
+  Import took 0.010763 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002145 seconds.
+  path: Assets/AssetResources/VFX/LaserBeam/LaserBeam.shader
+  artifactKey: Guid(0462bd0e57166c14b86b7d87a26184a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/LaserBeam/LaserBeam.shader using Guid(0462bd0e57166c14b86b7d87a26184a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90399d7dd9b9b58da2a789007a4d0c8e') in 0.003078 seconds 
+  Import took 0.009246 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.894504 seconds.
+  path: Assets/AssetResources/VFX/LaserBeam/vortex.shader
+  artifactKey: Guid(1ea911b96ead02b4b83c8896b707ebc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/LaserBeam/vortex.shader using Guid(1ea911b96ead02b4b83c8896b707ebc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be193e4877dafbf5773d6dfbda8beadc') in 0.014566 seconds 
+  Import took 0.020780 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006900 seconds.
+  path: Assets/AssetResources/VFX/LaserBeam/vortex.shader
+  artifactKey: Guid(1ea911b96ead02b4b83c8896b707ebc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/LaserBeam/vortex.shader using Guid(1ea911b96ead02b4b83c8896b707ebc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be193e4877dafbf5773d6dfbda8beadc') in 0.003078 seconds 
+  Import took 0.009418 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.647293 seconds.
+  path: Assets/AssetResources/VFX/LaserBeam/LaserBeam.prefab
+  artifactKey: Guid(05af802119fbb604bb3ff691c556e57c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/LaserBeam/LaserBeam.prefab using Guid(05af802119fbb604bb3ff691c556e57c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2196c86cacad27f1060febf0ff3ce5c8') in 0.004923 seconds 
+  Import took 0.011227 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 19.695873 seconds.
+  path: Assets/AssetResources/VFX/LaserBeam/Point19.png
+  artifactKey: Guid(54efaf97a6fa2374b921f593d50606f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/LaserBeam/Point19.png using Guid(54efaf97a6fa2374b921f593d50606f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af8d1a92463cc2ccadaf36ba91fe4e9c') in 0.010346 seconds 
+  Import took 0.015840 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.954897 seconds.
+  path: Assets/AssetResources/VFX/LaserBeam/Point19.png
+  artifactKey: Guid(54efaf97a6fa2374b921f593d50606f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/LaserBeam/Point19.png using Guid(54efaf97a6fa2374b921f593d50606f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fd85f945f505c17dd9e5b09d8001e06') in 0.008045 seconds 
+  Import took 0.013481 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003339 seconds.
+  path: Assets/AssetResources/VFX/LaserBeam/Point19.png
+  artifactKey: Guid(54efaf97a6fa2374b921f593d50606f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/LaserBeam/Point19.png using Guid(54efaf97a6fa2374b921f593d50606f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fd85f945f505c17dd9e5b09d8001e06') in 0.009806 seconds 
+  Import took 0.015982 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.023111 seconds.
+  path: Assets/AssetResources/VFX/LaserBeam/spark.mat
+  artifactKey: Guid(de35fa71fe6671549948e31e26fe9f10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/LaserBeam/spark.mat using Guid(de35fa71fe6671549948e31e26fe9f10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd76f98a9383aae3d0ef2dc025b5abe52') in 0.012278 seconds 
+  Import took 0.017950 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000313 seconds.
+  path: Assets/AssetResources/VFX/LaserBeam/Flash2.mat
+  artifactKey: Guid(23738db72006b0345a12911d4791af80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/LaserBeam/Flash2.mat using Guid(23738db72006b0345a12911d4791af80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a103934ee533740ae768642b74a29c48') in 0.011289 seconds 
+  Import took 0.018351 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 34.397146 seconds.
+  path: Assets/AssetResources/VFX/LaserBeam/Flash4.mat
+  artifactKey: Guid(3d0b258c8442b0440ab93af2c8072c0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/LaserBeam/Flash4.mat using Guid(3d0b258c8442b0440ab93af2c8072c0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1bb716f97fba959340f0ae3094c6636') in 0.012717 seconds 
+  Import took 0.018520 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000414 seconds.
+  path: Assets/AssetResources/VFX/LaserBeam/Flash3.mat
+  artifactKey: Guid(52081d53524c9b7408636f976e27e939) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/LaserBeam/Flash3.mat using Guid(52081d53524c9b7408636f976e27e939) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7fa28d931b727f3d99cebfb7f928e443') in 0.013981 seconds 
+  Import took 0.022169 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.736262 seconds.
+  path: Assets/AssetResources/VFX/LaserBeam/LaserBeam.prefab
+  artifactKey: Guid(05af802119fbb604bb3ff691c556e57c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/LaserBeam/LaserBeam.prefab using Guid(05af802119fbb604bb3ff691c556e57c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d0c53367cafb89ab22ffd062d86fcbd') in 0.004838 seconds 
+  Import took 0.011583 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.806303 seconds.
+  path: Assets/AssetResources/VFX/LaserBeam/LaserBeam.prefab
+  artifactKey: Guid(05af802119fbb604bb3ff691c556e57c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/LaserBeam/LaserBeam.prefab using Guid(05af802119fbb604bb3ff691c556e57c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f54be829c7d4bd26e57cadd318900341') in 0.005009 seconds 
+  Import took 0.011775 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.520491 seconds.
+  path: Assets/AssetResources/VFX/LaserBeam/Point12.png
+  artifactKey: Guid(fe0e50eee4427434ca648fe7e7327c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/LaserBeam/Point12.png using Guid(fe0e50eee4427434ca648fe7e7327c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5d3d6e5e1dd6f87c72b1a3fa44ccb90') in 0.010882 seconds 
+  Import took 0.016269 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001164 seconds.
+  path: Assets/AssetResources/VFX/LaserBeam/Point12.png
+  artifactKey: Guid(fe0e50eee4427434ca648fe7e7327c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/LaserBeam/Point12.png using Guid(fe0e50eee4427434ca648fe7e7327c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5d3d6e5e1dd6f87c72b1a3fa44ccb90') in 0.009711 seconds 
+  Import took 0.015319 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.120773 seconds.
+  path: Assets/AssetResources/VFX/LaserBeam/Point12.png
+  artifactKey: Guid(fe0e50eee4427434ca648fe7e7327c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/LaserBeam/Point12.png using Guid(fe0e50eee4427434ca648fe7e7327c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cadbea5000f534ac5c39da7ea3ccb057') in 0.008388 seconds 
+  Import took 0.013792 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003228 seconds.
+  path: Assets/AssetResources/VFX/LaserBeam/Point12.png
+  artifactKey: Guid(fe0e50eee4427434ca648fe7e7327c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/LaserBeam/Point12.png using Guid(fe0e50eee4427434ca648fe7e7327c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cadbea5000f534ac5c39da7ea3ccb057') in 0.009158 seconds 
+  Import took 0.015096 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.568451 seconds.
+  path: Assets/AssetResources/VFX/ShaderForge/Shader Forge_Add_TwoSIde.mat
+  artifactKey: Guid(40c59090b4ff87e4f809eeb2c0c7da31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/ShaderForge/Shader Forge_Add_TwoSIde.mat using Guid(40c59090b4ff87e4f809eeb2c0c7da31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef063104ca0466df0c2e4c0d58f9df40') in 0.038541 seconds 
+  Import took 0.043819 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000335 seconds.
+  path: Assets/AssetResources/VFX/ShaderForge/Shader Forge_SF_AlphaBlended_Depth.mat
+  artifactKey: Guid(a1ab02b6870b86e49a316f060dfbdd5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/ShaderForge/Shader Forge_SF_AlphaBlended_Depth.mat using Guid(a1ab02b6870b86e49a316f060dfbdd5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9eab07a6e89dd379352573359b4b887') in 0.039394 seconds 
+  Import took 0.044360 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.761157 seconds.
+  path: Assets/AssetResources/VFX/Skill/Orange/05ring.max
+  artifactKey: Guid(c6e5de89d106f3443a29e634ae972108) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/Skill/Orange/05ring.max using Guid(c6e5de89d106f3443a29e634ae972108) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a07fd7d1fd3c9bda0f0018cfddd6ad10') in 0.038184 seconds 
+  Import took 0.043581 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000334 seconds.
+  path: Assets/AssetResources/VFX/Skill/Orange/MSK.mat
+  artifactKey: Guid(c5131454eb492f746b044bd8a610dca8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/Skill/Orange/MSK.mat using Guid(c5131454eb492f746b044bd8a610dca8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4585d30eef3ee2ea53d83fa7dafed9c2') in 0.011626 seconds 
+  Import took 0.017339 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000346 seconds.
+  path: Assets/AssetResources/VFX/Skill/Orange/VFX_Ring.mat
+  artifactKey: Guid(2678ea8a4a25e504abd9067bb1c5696e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/Skill/Orange/VFX_Ring.mat using Guid(2678ea8a4a25e504abd9067bb1c5696e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86fcbb206d381e1ebf979baaae1c2cb1') in 0.044770 seconds 
+  Import took 0.050257 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000354 seconds.
+  path: Assets/AssetResources/VFX/Skill/Orange/frame.tga
+  artifactKey: Guid(3fa0cf09be7c2804c81ae3f571700048) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/Skill/Orange/frame.tga using Guid(3fa0cf09be7c2804c81ae3f571700048) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e662bd71072056b09be051513e6b091f') in 0.010398 seconds 
+  Import took 0.015658 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000323 seconds.
+  path: Assets/AssetResources/VFX/Skill/Orange/06CubeGroup.max
+  artifactKey: Guid(9afc09d44778d134fad540dbd75a2fad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/Skill/Orange/06CubeGroup.max using Guid(9afc09d44778d134fad540dbd75a2fad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f30987fcb32e8536153fcc0c9d1639b') in 0.054232 seconds 
+  Import took 0.059872 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000313 seconds.
+  path: Assets/AssetResources/VFX/Skill/Orange/MSK_Halo 1.mat
+  artifactKey: Guid(2c08a87d02cadb24eb082b49c2962020) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/Skill/Orange/MSK_Halo 1.mat using Guid(2c08a87d02cadb24eb082b49c2962020) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13e896a1961a76f781ace3328d5ddc9e') in 0.012347 seconds 
+  Import took 0.017547 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000340 seconds.
+  path: Assets/AssetResources/VFX/Skill/Orange/halo.png
+  artifactKey: Guid(39594b011c7f11142838f3f9cecf469c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/Skill/Orange/halo.png using Guid(39594b011c7f11142838f3f9cecf469c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64ca66d0c13b3b04a5affb14e1c930f4') in 0.010714 seconds 
+  Import took 0.017370 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000280 seconds.
+  path: Assets/AssetResources/VFX/Skill/Orange/FX_Mosaic.prefab
+  artifactKey: Guid(f9aab3e85d15c5e489741cad7b2b942b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/Skill/Orange/FX_Mosaic.prefab using Guid(f9aab3e85d15c5e489741cad7b2b942b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09cc0a899bfd33ba52317b12623c0ee6') in 0.021197 seconds 
+  Import took 0.028648 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000349 seconds.
+  path: Assets/AssetResources/VFX/Skill/Orange/frame2.tga
+  artifactKey: Guid(1eba00b0a60c1d447bc00866aef888b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/Skill/Orange/frame2.tga using Guid(1eba00b0a60c1d447bc00866aef888b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce154137644c430a58ed674d84f99b74') in 0.009992 seconds 
+  Import took 0.015843 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000396 seconds.
+  path: Assets/AssetResources/VFX/Skill/Orange/frame.psd
+  artifactKey: Guid(0f17100e1943e9548bd24d9e66e27fd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/Skill/Orange/frame.psd using Guid(0f17100e1943e9548bd24d9e66e27fd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd51e5ef0c4750a1ff4cf70c0075db4e8') in 0.008844 seconds 
+  Import took 0.014254 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000459 seconds.
+  path: Assets/AssetResources/VFX/Skill/Orange/gradient3.psd
+  artifactKey: Guid(2f7a418a6d445ae41814e2cc41b71edb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/Skill/Orange/gradient3.psd using Guid(2f7a418a6d445ae41814e2cc41b71edb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07a1bc311e1d62dfb29b15db3541ed47') in 0.009978 seconds 
+  Import took 0.015856 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000336 seconds.
+  path: Assets/AssetResources/VFX/Skill/Orange/MSK_HaloLarge.mat
+  artifactKey: Guid(645f5bd8776ef674caa8139e6efd2455) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/Skill/Orange/MSK_HaloLarge.mat using Guid(645f5bd8776ef674caa8139e6efd2455) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0239a3e3e56e8796510a5c6d9a804b5b') in 0.012892 seconds 
+  Import took 0.019204 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000351 seconds.
+  path: Assets/AssetResources/VFX/Skill/Orange/MSK_Halo.mat
+  artifactKey: Guid(7af9b08d775fb9b419e3a9e93aad5d0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/Skill/Orange/MSK_Halo.mat using Guid(7af9b08d775fb9b419e3a9e93aad5d0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b02fbdf28e668f3c908256f9abb6e69c') in 0.011025 seconds 
+  Import took 0.017096 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000312 seconds.
+  path: Assets/AssetResources/VFX/Skill/Orange/13Post-processing Profile.asset
+  artifactKey: Guid(54a56913427afe3479cb6f538698fcdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/Skill/Orange/13Post-processing Profile.asset using Guid(54a56913427afe3479cb6f538698fcdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de9ccbbc3963fde8bf358e463d4391a1') in 0.007147 seconds 
+  Import took 0.012916 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000598 seconds.
+  path: Assets/AssetResources/VFX/Skill/Orange/halo_light.png
+  artifactKey: Guid(cd9ea91b29335f648ac199ce397c84f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/Skill/Orange/halo_light.png using Guid(cd9ea91b29335f648ac199ce397c84f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fdfc7c49c3b469e2bff50c323d349325') in 0.009602 seconds 
+  Import took 0.015964 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 56.604771 seconds.
+  path: Assets/AssetResources/VFX/Skill/Orange/Smoke.png
+  artifactKey: Guid(e6b024fc1e8148145909bd91fa85fb02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/Skill/Orange/Smoke.png using Guid(e6b024fc1e8148145909bd91fa85fb02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8b7d460956a27e5cb1dbff854c89453') in 0.011128 seconds 
+  Import took 0.016561 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 76.005170 seconds.
+  path: Assets/Settings/UniversalRenderPipelineAsset.asset
+  artifactKey: Guid(136ca109248a3b34e95e8ab29870ff89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/UniversalRenderPipelineAsset.asset using Guid(136ca109248a3b34e95e8ab29870ff89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf41e043dc3f3dacd45aacc6e04e53af') in 0.006525 seconds 
+  Import took 0.011950 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000369 seconds.
+  path: Assets/Settings/UniversalRenderPipelineAsset_Renderer.asset
+  artifactKey: Guid(a621de5d2862d9c4aa865a1bbcecafcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/UniversalRenderPipelineAsset_Renderer.asset using Guid(a621de5d2862d9c4aa865a1bbcecafcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3f58cdc2ae63cc8a9b0e35f6fd1c3a1') in 0.006506 seconds 
+  Import took 0.012108 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.255715 seconds.
+  path: Assets/Scripts/Scene
+  artifactKey: Guid(2c5d360c971cbf54082437ff1c959e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Scene using Guid(2c5d360c971cbf54082437ff1c959e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18d8c07869bcd48ca4da02f3ce10ee78') in 0.006805 seconds 
+  Import took 0.012209 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000603 seconds.
+  path: Assets/Scripts/Scene
+  artifactKey: Guid(2c5d360c971cbf54082437ff1c959e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Scene using Guid(2c5d360c971cbf54082437ff1c959e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18d8c07869bcd48ca4da02f3ce10ee78') in 0.002177 seconds 
+  Import took 0.007990 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.851560 seconds.
+  path: Assets/Scripts/Scene/MonsterAbout
+  artifactKey: Guid(a608aadc9d1ce1041bb0e3b83487bb26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Scene/MonsterAbout using Guid(a608aadc9d1ce1041bb0e3b83487bb26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b8bde90876c537d939f518e89215b26') in 0.006185 seconds 
+  Import took 0.012271 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.529113 seconds.
+  path: Assets/AssetResources/VFX/Skill/Orange/MSK_Halo 1.mat
+  artifactKey: Guid(2c08a87d02cadb24eb082b49c2962020) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetResources/VFX/Skill/Orange/MSK_Halo 1.mat using Guid(2c08a87d02cadb24eb082b49c2962020) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d8f1cddf6c19867909cddc49a0f755b') in 0.011371 seconds 
+  Import took 0.016784 seconds .
+
