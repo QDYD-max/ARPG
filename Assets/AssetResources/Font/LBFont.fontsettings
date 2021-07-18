@@ -9,7 +9,7 @@ Font:
   m_Name: LBFont
   serializedVersion: 5
   m_LineSpacing: 0.1
-  m_DefaultMaterial: {fileID: 0}
+  m_DefaultMaterial: {fileID: 2100000, guid: 09c21ed4dc350344cb77d5297b7142da, type: 2}
   m_FontSize: 0
   m_Texture: {fileID: 0}
   m_AsciiStartOffset: 0
@@ -17,7 +17,167 @@ Font:
   m_CharacterSpacing: 0
   m_CharacterPadding: 1
   m_ConvertCase: 0
-  m_CharacterRects: []
+  m_CharacterRects:
+  - serializedVersion: 2
+    index: 48
+    uv:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0.1
+      height: 1
+    vert:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 34
+      height: -46
+    advance: 34
+    flipped: 0
+  - serializedVersion: 2
+    index: 49
+    uv:
+      serializedVersion: 2
+      x: 0.1
+      y: 0
+      width: 0.0348
+      height: 1
+    vert:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 16
+      height: -46
+    advance: 16
+    flipped: 0
+  - serializedVersion: 2
+    index: 50
+    uv:
+      serializedVersion: 2
+      x: 0.147
+      y: 0
+      width: 0.1
+      height: 1
+    vert:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 34
+      height: -46
+    advance: 34
+    flipped: 0
+  - serializedVersion: 2
+    index: 51
+    uv:
+      serializedVersion: 2
+      x: 0.256
+      y: 0
+      width: 0.1
+      height: 1
+    vert:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 34
+      height: -46
+    advance: 34
+    flipped: 0
+  - serializedVersion: 2
+    index: 52
+    uv:
+      serializedVersion: 2
+      x: 0.368
+      y: 0
+      width: 0.1
+      height: 1
+    vert:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 34
+      height: -46
+    advance: 34
+    flipped: 0
+  - serializedVersion: 2
+    index: 53
+    uv:
+      serializedVersion: 2
+      x: 0.473
+      y: 0
+      width: 0.1
+      height: 1
+    vert:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 34
+      height: -46
+    advance: 34
+    flipped: 0
+  - serializedVersion: 2
+    index: 54
+    uv:
+      serializedVersion: 2
+      x: 0.576
+      y: 0
+      width: 0.1
+      height: 1
+    vert:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 34
+      height: -46
+    advance: 34
+    flipped: 0
+  - serializedVersion: 2
+    index: 55
+    uv:
+      serializedVersion: 2
+      x: 0.694
+      y: 0
+      width: 0.1
+      height: 1
+    vert:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 34
+      height: -46
+    advance: 34
+    flipped: 0
+  - serializedVersion: 2
+    index: 56
+    uv:
+      serializedVersion: 2
+      x: 0.797
+      y: 0
+      width: 0.1
+      height: 1
+    vert:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 34
+      height: -46
+    advance: 34
+    flipped: 0
+  - serializedVersion: 2
+    index: 57
+    uv:
+      serializedVersion: 2
+      x: 0.9
+      y: 0
+      width: 0.1
+      height: 1
+    vert:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 34
+      height: -46
+    advance: 34
+    flipped: 0
   m_KerningValues: []
   m_PixelScale: 0.1
   m_FontData: 

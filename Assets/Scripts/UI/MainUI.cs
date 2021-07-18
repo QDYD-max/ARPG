@@ -239,7 +239,7 @@ public class MainUI : UIPanel
         percentVal = (float) Math.Round(percentVal, 4);
         
         sliderMainPlayerHp.value = percentVal;
-        textMainPlayerHp.text = $"{_curHp}/{_curMaxHp}";
+        textMainPlayerHp.text = $"{_curHp}";
     }
     
     private void UpdateMainPlayerShield(NumericChange change)
@@ -266,7 +266,7 @@ public class MainUI : UIPanel
         percentVal = (float) Math.Round(percentVal, 4);
 
         sliderMainPlayerShield.value = percentVal;
-        textMainPlayerShield.text = $"{_curShield}/{_curMaxShield}";
+        textMainPlayerShield.text = $"{_curShield}";
     }
     
     private void UpdateMainPlayerEnergy(NumericChange change)
@@ -294,7 +294,7 @@ public class MainUI : UIPanel
         percentVal = (float) Math.Round(percentVal, 4);
         
         sliderMainPlayerEnergy.value = percentVal;
-        textMainPlayerHp.text = $"{_curEnergy}/{_curMaxEnergy}";
+        textMainPlayerEnergy.text = $"{_curEnergy}/{_curMaxEnergy}";
     }
     
 }

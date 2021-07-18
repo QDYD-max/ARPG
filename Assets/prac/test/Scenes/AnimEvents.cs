@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using CFramework;
 using UnityEngine;
@@ -6,6 +7,11 @@ using UnityEngine.InputSystem;
 
 public class AnimEvents : MonoBehaviour
 {
+    private void Awake()
+    {
+        
+    }
+
     public void AttackDamage(float AttackDistance)
     {
         //AudioMgr.instance.PlaySound("Hit");
@@ -30,21 +36,21 @@ public class AnimEvents : MonoBehaviour
                     if (angle <= AttackAngle * 0.5f)
                     {
                         Debug.Log("伤害"+ hitCollider.name);
-                        RoleCtrl AttackedRoleCtrl = hitCollider.GetComponent<RoleCtrl>();
+                        //RoleCtrl AttackedRoleCtrl = hitCollider.GetComponent<RoleCtrl>();
                         EventCenter.Instance.EventTrigger<RoleBattle>(CEventType.RoleBattle, new RoleBattle()
                         {
                             Attacker = gameObject,
                             DamagedEntity = hitCollider.gameObject,
                             value = -10
                         });
-                        AttackedRoleCtrl.Damaged(10);
+                        //AttackedRoleCtrl.Damaged(10);
                     }
                 }
             }
         }
     }
 
-    public void SkillkDamage()
+    public void SkillDamage()
     {
         //AudioMgr.instance.PlaySound("Hit");
         
@@ -70,8 +76,14 @@ public class AnimEvents : MonoBehaviour
                 float angle = Mathf.Acos(Vector3.Dot(norVec.normalized, temVec.normalized)) * Mathf.Rad2Deg;
                 if (angle <= AttackAngle * 0.5f)
                 {
-                    RoleCtrl AttackedRoleCtrl = hitCollider.GetComponent<RoleCtrl>();
-                    AttackedRoleCtrl.Damaged(20);
+                    //RoleCtrl AttackedRoleCtrl = hitCollider.GetComponent<RoleCtrl>();
+                    EventCenter.Instance.EventTrigger<RoleBattle>(CEventType.RoleBattle, new RoleBattle()
+                    {
+                        Attacker = gameObject,
+                        DamagedEntity = hitCollider.gameObject,
+                        value = -20
+                    });
+                    //AttackedRoleCtrl.Damaged(20);
                     Debug.Log("技能伤害"+ hitCollider.name);
                 }
             }
