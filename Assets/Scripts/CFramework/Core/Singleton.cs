@@ -40,9 +40,8 @@
                             if (m_Instance == null)
                             {
                                 // Need to create a new GameObject to attach the singleton to.
-                                var singletonObject = new GameObject();
+                                var singletonObject = new GameObject(typeof(T).ToString() + " (Singleton)");
                                 m_Instance = singletonObject.AddComponent<T>();
-                                singletonObject.name = typeof(T).ToString() + " (Singleton)";
 
                                 GameObject parent = GameObject.Find("Boot");
                                 if (parent == null)
@@ -50,11 +49,7 @@
                                     parent = new GameObject("Boot");
                                     DontDestroyOnLoad(parent);
                                 }
-
-                                if (parent != null)
-                                {
-                                    singletonObject.transform.parent = parent.transform;
-                                }
+                                singletonObject.transform.parent = parent.transform;
 
                                 // Make instance persistent.
                                 DontDestroyOnLoad(singletonObject);

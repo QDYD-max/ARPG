@@ -22,7 +22,7 @@ public class MainPlayer : MonoSingleton<MainPlayer>, PlayerInput.IPlayerActions
     private float _mosueDeltaY = 0;
 
     private float timer;
-    
+
 
     private void Awake()
     {
@@ -141,10 +141,83 @@ public class MainPlayer : MonoSingleton<MainPlayer>, PlayerInput.IPlayerActions
         }
     }
 
+
+    //-----镭射枪内容
+    private bool flag = false;
+    GameObject effect;
+
+    private IEnumerator CoBuffOnTick(GameObject entity)
+    {
+        while (flag)
+        {
+            yield return new WaitForSeconds(0.2f);
+            print(entity.GetComponent<NumericComponent>()[NumericType.HpBase]);
+            EventCenter.Instance.EventTrigger<RoleBattle>(CEventType.RoleBattle, new RoleBattle()
+            {
+                Attacker = mainPlayerCtrl.gameObject,
+                DamagedEntity = entity,
+                value = -10
+            });
+        }
+
+        yield return null;
+    }
+    //-----
+
     public void OnAttack(InputAction.CallbackContext context)
     {
+        if (effect == null)
+        {
+            GameObject effectPrefab = Resources.Load<GameObject>("LaserBeam");
+            effect = GameObject.Instantiate(effectPrefab);
+        }
+
+        switch (context.phase)
+        {
+            case InputActionPhase.Disabled:
+                break;
+            case InputActionPhase.Waiting:
+                break;
+            case InputActionPhase.Started:
+                break;
+            case InputActionPhase.Performed:
+            {
+                Vector3 pos = mainPlayerCtrl.transform.Find("GunPos").position;
+                //--------------交互部分
+                mainPlayerCtrl.Animator.SetBool("ToIdle", false);
+                mainPlayerCtrl.Animator.SetInteger("ToAttack", 5);
+                //--------------特效部分
+                effect.transform.position = pos; //有枪模型的话应该跟随枪 TODO
+                effect.transform.forward = mainPlayerCtrl.transform.forward;
+                effect.SetActive(true);
+                //------------程序判断部分
+                RaycastHit hit;
+                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit,
+                    Mathf.Infinity, 1 << LayerMask.NameToLayer($"Enemy")))
+                {
+                    flag = true;
+                    StartCoroutine(CoBuffOnTick(hit.collider.gameObject));
+                    Debug.Log("Did Hit");
+                }
+                else
+                {
+                    Debug.Log("Did not Hit");
+                }
+
+                break;
+            }
+            case InputActionPhase.Canceled:
+                //-------松开结束镭射枪内容
+                mainPlayerCtrl.Animator.SetInteger("ToAttack", 0);
+                mainPlayerCtrl.Animator.SetBool("ToIdle", true);
+                flag = false;
+                effect.SetActive(false);
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
         //连击放在这里完成
-        if (!isAttack)
+        /*if (!isAttack)
         {
             mainPlayerCtrl.direction = Vector2.zero;
             isAttack = true;
@@ -154,7 +227,7 @@ public class MainPlayer : MonoSingleton<MainPlayer>, PlayerInput.IPlayerActions
             //mainPlayerCtrl.curRoleFSM.ChangeState(RoleState.Attack, attackCombo);
             timer = mainPlayerCtrl.Animator.GetCurrentAnimatorClipInfo(0).Length;
             attackCombo++;
-        }
+        }*/
     }
 
     public void OnDodge(InputAction.CallbackContext context)
@@ -216,9 +289,6 @@ public class MainPlayer : MonoSingleton<MainPlayer>, PlayerInput.IPlayerActions
             rotateX = ReturnToEulerAngle(rotateX);
             _vCamera.transform.localEulerAngles = new Vector3(rotateX, rotateY, 0);
         }
-        
-        
-        
     }
 
     public void OnCameraDistance(InputAction.CallbackContext context)
@@ -239,8 +309,8 @@ public class MainPlayer : MonoSingleton<MainPlayer>, PlayerInput.IPlayerActions
         GameObject cameraPrefab = ResourceLoader.Load<GameObject>(ResourceType.Game, "CM3rdPersonNormal");
         _vCamera = Instantiate(cameraPrefab);
     }
-    
-    private float CheckAngle(float value)  // 将大于180度角进行以负数形式输出
+
+    private float CheckAngle(float value) // 将大于180度角进行以负数形式输出
     {
         float angle = value;
         if (angle > 260)

@@ -6,23 +6,16 @@ namespace CFramework
 {
     public class BuffComponent : MonoBehaviour
     {
-        public List<BuffBase> bufflist = new List<BuffBase>();
-        private void Update()
-        {
-            foreach (BuffBase buff in bufflist)
-            {
-                buff.OnTick();
-            }
-        }
+        private List<IBuff> bufflist = new List<IBuff>();
 
-        public void AddBuff(BuffBase buff)
+        public void AddBuff(IBuff buff)
         {
             bufflist.Add(buff);
         }
 
-        public void RemoveBuff()
+        public void RemoveBuff(IBuff buff)
         {
-            
+            bufflist.Remove(buff);
         }
     }
 }
