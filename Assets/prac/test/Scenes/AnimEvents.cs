@@ -21,7 +21,7 @@ public class AnimEvents : MonoBehaviour
         // 玩家正前方的向量
         Vector3 norVec = transform.rotation * Vector3.forward;
 
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, AttackDistance, 1 << LayerMask.NameToLayer("Role"));
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, AttackDistance, 1 << LayerMask.NameToLayer($"Enemy"));
         //Debug.Log(hitColliders.Length);
         if (hitColliders.Length != 0)
         {
@@ -36,14 +36,12 @@ public class AnimEvents : MonoBehaviour
                     if (angle <= AttackAngle * 0.5f)
                     {
                         Debug.Log("伤害"+ hitCollider.name);
-                        //RoleCtrl AttackedRoleCtrl = hitCollider.GetComponent<RoleCtrl>();
                         EventCenter.Instance.EventTrigger<RoleBattle>(CEventType.RoleBattle, new RoleBattle()
                         {
                             Attacker = gameObject,
                             DamagedEntity = hitCollider.gameObject,
                             value = -10
                         });
-                        //AttackedRoleCtrl.Damaged(10);
                     }
                 }
             }
@@ -61,7 +59,7 @@ public class AnimEvents : MonoBehaviour
         // 玩家正前方的向量
         Vector3 norVec = transform.rotation * Vector3.forward;
 
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, AttackDistance, 1 << LayerMask.NameToLayer("Role"));
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, AttackDistance, 1 << LayerMask.NameToLayer($"Enemy"));
         if (hitColliders.Length != 0)
         {
             
@@ -76,14 +74,12 @@ public class AnimEvents : MonoBehaviour
                 float angle = Mathf.Acos(Vector3.Dot(norVec.normalized, temVec.normalized)) * Mathf.Rad2Deg;
                 if (angle <= AttackAngle * 0.5f)
                 {
-                    //RoleCtrl AttackedRoleCtrl = hitCollider.GetComponent<RoleCtrl>();
                     EventCenter.Instance.EventTrigger<RoleBattle>(CEventType.RoleBattle, new RoleBattle()
                     {
                         Attacker = gameObject,
                         DamagedEntity = hitCollider.gameObject,
                         value = -20
                     });
-                    //AttackedRoleCtrl.Damaged(20);
                     Debug.Log("技能伤害"+ hitCollider.name);
                 }
             }

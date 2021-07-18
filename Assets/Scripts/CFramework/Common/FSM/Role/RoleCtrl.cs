@@ -23,6 +23,7 @@ public class RoleCtrl : MonoBehaviour
     {
         Animator = gameObject.GetComponent<Animator>();
         curNumeric = gameObject.AddComponent<NumericComponent>();
+        EventCenter.Instance.AddEventListener<RoleBattle>(CEventType.RoleBattle, RoleBattleDamage);
     }
 
     public void Init(RoleType roleType)
@@ -56,21 +57,15 @@ public class RoleCtrl : MonoBehaviour
 
         //CheckGrounded();
     }
-    
-    public void Damaged(int damageNum)
+
+    private void RoleBattleDamage(RoleBattle battle)
     {
-        curNumeric[NumericType.HpBase] -= damageNum;
+        if(battle.DamagedEntity != this.gameObject) return;
         
-        
-        if (curNumeric[NumericType.Hp] < 0.0001f)
-        {
-            curRoleFSM.ChangeState(RoleState.Die, 1);
-        }
-        else
-        {
-            curRoleFSM.ChangeState(RoleState.Hurt, 1);
-        }
+        curNumeric[NumericType.HpBase] += battle.value;
+        curRoleFSM.ChangeState(curNumeric[NumericType.Hp] < 0.0001f ? RoleState.Die : RoleState.Hurt, 1);
     }
+    
 
     void CheckGrounded()
     {

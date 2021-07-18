@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4508840651086404029}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cloth_l_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507217754918632595}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RopeR_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507461737856460493}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cloth_back_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507321803253768403}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BottleWine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507221748794108511}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: lowerarm_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 4509087012543130901}
   - component: {fileID: 4538409847791291065}
   - component: {fileID: 4528312240626673273}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SM_Katana_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -246,7 +246,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507121364498741867}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thumb_03_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -276,7 +276,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509217107766816665}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: index_03_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -307,7 +307,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4508870873734977671}
   - component: {fileID: 4598883878050771997}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SK_Arashi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -366,7 +366,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4508795292950210439}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RopeL_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -397,7 +397,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507103394479577523}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: middle_01_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -428,7 +428,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507255569406332203}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Jiggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -459,7 +459,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507446367179034045}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: middle_01_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -490,7 +490,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507142717134602223}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hand_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -525,7 +525,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507487313518403191}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Weapon_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -555,7 +555,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507503814781763765}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pinky_02_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -586,7 +586,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4508816671520210541}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Head_Socket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -619,7 +619,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507100622873866431}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Back_Sleeve_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -650,7 +650,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509018941743382897}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: middle_03_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -680,7 +680,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507034275021808603}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pelvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -719,7 +719,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4508960551822912971}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cloth_r_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -750,7 +750,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509044207754591217}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: calf_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -783,7 +783,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509065061217299359}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ring_02_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -814,7 +814,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4508828093045495909}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RopeL_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -844,7 +844,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507438053949126965}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cloth_r_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -875,7 +875,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4509213705076598361}
   - component: {fileID: 4567963540985938741}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_BindWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -973,7 +973,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509166862730157121}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: index_01_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1004,7 +1004,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4508710425923788653}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ring_03_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1034,7 +1034,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507407990263610377}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: calf_twist_01_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1064,7 +1064,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4508781550136624131}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Weapon_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1095,7 +1095,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507215357639201453}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: index_02_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1126,7 +1126,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4508707615771907047}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thigh_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1160,7 +1160,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507060347101222031}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: neck_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1191,7 +1191,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509062407020791153}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ring_03_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1221,7 +1221,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507102483239307741}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trouser_l_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1252,7 +1252,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507246743362208347}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Arashi:master_anim_space_switcher_follow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1283,7 +1283,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4508986132579673457}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ClothF_l_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1313,7 +1313,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4508871328784012379}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: upperarm_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1345,7 +1345,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509114951825681243}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cloth_l_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1376,7 +1376,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509210108015745277}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1407,7 +1407,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509036885417912073}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ClothF_r_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1438,7 +1438,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509138564283708237}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: middle_03_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1468,7 +1468,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507526528563354061}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pinky_03_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1498,7 +1498,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507059566832064993}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: foot_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1533,7 +1533,7 @@ GameObject:
   - component: {fileID: 642402627}
   - component: {fileID: 642402628}
   - component: {fileID: 7341220283055332699}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MainPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1588,6 +1588,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Animator: {fileID: 4599019333296126491}
   curRoleType: 0
+  curAI: {fileID: 0}
   mainCharacterController: {fileID: 0}
   curNumeric: {fileID: 0}
   direction: {x: 1, y: 1}
@@ -1631,7 +1632,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507432083773297529}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ClothF_r_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1661,7 +1662,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4508783173050500703}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RopeR_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1692,7 +1693,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4508841719115936513}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: lowerarm_twist_01_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1722,7 +1723,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4508755312036361115}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cloth_back_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1753,7 +1754,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509225900395242191}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cloth_l_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1784,7 +1785,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4508969004210724411}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trouser_l_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1814,7 +1815,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509226732962619031}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Arashi:master_anim_space_switcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1845,7 +1846,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509115589453210429}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thumb_02_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1877,7 +1878,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4508856408690407701}
   - component: {fileID: 4569832519480632445}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_Hair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1969,7 +1970,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509187081401469229}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hand_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2005,7 +2006,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509163293321433241}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ClothF_l_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2036,7 +2037,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509119769075706671}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pelvis_WeaponSocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2068,7 +2069,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509015737191739293}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: index_02_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2100,7 +2101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4508999022944885445}
   - component: {fileID: 4569615516865339461}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_Cloth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2230,7 +2231,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507402440668667529}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trouser_l_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2261,7 +2262,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4508703355211021699}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cloth_r_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2292,7 +2293,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509026595123663973}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Back_Sleeve_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2323,7 +2324,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509167921283960523}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: foot_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2354,7 +2355,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507326022746861693}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pinky_02_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2385,7 +2386,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4508997463873693673}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cloth_back_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2417,7 +2418,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4507056085977597725}
   - component: {fileID: 4568311000766672975}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_Knot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2512,7 +2513,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507442459573638985}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Arashi:driver_root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2542,7 +2543,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507226115648718027}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thumb_01_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2575,7 +2576,7 @@ GameObject:
   - component: {fileID: 4507470335004198999}
   - component: {fileID: 4537050119465308243}
   - component: {fileID: 4526568297669891473}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SM_Katana_2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2654,7 +2655,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507229193944647203}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: calf_twist_01_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2684,7 +2685,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509008629683068305}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RopeL_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2715,7 +2716,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509210414135032441}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: upperarm_twist_01_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2745,7 +2746,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4508808084442195159}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thumb_01_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2778,7 +2779,7 @@ GameObject:
   - component: {fileID: 4509108354365917259}
   - component: {fileID: 4538222956952972441}
   - component: {fileID: 4527841393232660547}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SM_Tail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2857,7 +2858,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507087397814941275}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pinky_03_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2888,7 +2889,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4507136517129506239}
   - component: {fileID: 4567879164044789223}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_BackSteeve
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2998,7 +2999,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4508807752560230455}
   - component: {fileID: 4569796483187658913}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3178,7 +3179,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509185486543548117}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Arashi:root_anim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3208,7 +3209,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4508739670474547001}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: index_01_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3239,7 +3240,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507075646377849721}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: index_03_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3269,7 +3270,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509059743851870357}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pinky_01_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3300,7 +3301,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509228531221654773}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thigh_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3334,7 +3335,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507350021211669217}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trouser_r_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3365,7 +3366,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4508825452780547509}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ring_01_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3396,7 +3397,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507117111623377877}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: upperarm_twist_01_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3428,7 +3429,7 @@ GameObject:
   - component: {fileID: 4507092598282647773}
   - component: {fileID: 4536493074443522845}
   - component: {fileID: 4526949826275303037}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SM_Bearded
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3507,7 +3508,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4508958177739602553}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ring_02_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3538,7 +3539,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507460795075009151}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3572,7 +3573,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4506995631041400321}
   - component: {fileID: 4569239541691444327}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_Rope_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3669,7 +3670,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507436401928569693}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cloth_l_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3699,7 +3700,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4508766104411138591}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thigh_twist_01_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3729,7 +3730,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509129566345020071}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: middle_02_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3760,7 +3761,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4508978152783083339}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ball_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3790,7 +3791,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507389423932472253}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thumb_03_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3820,7 +3821,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509185573293062795}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ClothF_r_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3851,7 +3852,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507004078592314187}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Weapon_Socket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3883,7 +3884,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507257616709315435}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trouser_r_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3914,7 +3915,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509137193605862783}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: middle_02_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3945,7 +3946,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4508700676896210601}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: lowerarm_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3977,7 +3978,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507535538239419353}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thumb_02_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4008,7 +4009,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507526149951496263}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: clavicle_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4039,7 +4040,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507250023901723121}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trouser_r_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4069,7 +4070,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4508672212449069521}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ClothF_l_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4100,7 +4101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507141372708088541}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Back_Sleeve_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4130,7 +4131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507244950731150211}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RopeR_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4160,7 +4161,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507047097454297779}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cloth_r_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4191,7 +4192,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507359204639848767}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4222,7 +4223,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4508775724004186539}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: lowerarm_twist_01_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4252,7 +4253,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507114600351823827}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: calf_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4285,7 +4286,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4508839239472646915}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cloth_back_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4315,7 +4316,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507118676768780321}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Arashi:rig_grp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4347,7 +4348,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509183250482559415}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Arashi:master_anim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4378,7 +4379,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4508789713692464263}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4409,7 +4410,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507184583893787983}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: upperarm_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4441,7 +4442,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4506994835803589191}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: clavicle_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4472,7 +4473,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507182706517765737}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pinky_01_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4505,7 +4506,7 @@ GameObject:
   - component: {fileID: 4507013356979924885}
   - component: {fileID: 4538223409501608455}
   - component: {fileID: 4526604667022953169}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SM_BottleWine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4584,7 +4585,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507418398365105227}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ring_01_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4615,7 +4616,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507073371902358433}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ball_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4645,7 +4646,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507240232771231827}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ClothF_r_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4676,7 +4677,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507508408203590505}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ClothF_l_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4708,7 +4709,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4507081493905023343}
   - component: {fileID: 4567862497627685751}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_Rope_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4806,7 +4807,7 @@ GameObject:
   - component: {fileID: 4507511170935554555}
   - component: {fileID: 4536589116909334349}
   - component: {fileID: 4526911561421577293}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SM_Hat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4885,7 +4886,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509118143351700299}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thigh_twist_01_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4915,7 +4916,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507512223340324125}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4948,7 +4949,7 @@ GameObject:
   - component: {fileID: 4507484363554736987}
   - component: {fileID: 4536948133923961837}
   - component: {fileID: 4526299570714316699}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SM_Katana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
