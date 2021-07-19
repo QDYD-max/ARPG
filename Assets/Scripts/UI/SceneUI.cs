@@ -42,7 +42,6 @@ public class SceneUI : UIPanel
         if (battle.DamagedEntity == MainPlayer.Instance.mainPlayerCtrl.gameObject) return;
         
         //飘血
-        Debug.Log(battle.DamagedEntity.name + "飘血特效");
         //可以考虑使用对象池
         
         GameObject textPrefab = ResourceLoader.Load<GameObject>(ResourceType.UI, "Text_Flow", true);

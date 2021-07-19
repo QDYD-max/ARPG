@@ -35,6 +35,14 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
+                    ""name"": ""AttackHold"",
+                    ""type"": ""Button"",
+                    ""id"": ""43845cb0-52f8-4f2d-bf1a-425b0f669721"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
                     ""name"": ""Dodge"",
                     ""type"": ""Button"",
                     ""id"": ""3ca124ac-8da5-45f7-8c5a-f5c22e6042dc"",
@@ -48,7 +56,15 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""id"": ""1c444c64-9719-420e-8e3d-3d6d28180d26"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Press(behavior=1)""
+                },
+                {
+                    ""name"": ""Skill1Hold"",
+                    ""type"": ""Button"",
+                    ""id"": ""43083780-bebb-411b-9f0f-4021cd15271e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Hold""
                 },
                 {
                     ""name"": ""Skill2"",
@@ -56,7 +72,7 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""id"": ""bbf99c3d-2b50-4ebf-94fc-908079914999"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Press(behavior=1)""
                 },
                 {
                     ""name"": ""CameraRotate"",
@@ -70,6 +86,14 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""name"": ""CameraDistance"",
                     ""type"": ""Value"",
                     ""id"": ""5bfcb733-afa6-41ff-9d13-9ccb69f9237e"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""MousePosition"",
+                    ""type"": ""Value"",
+                    ""id"": ""4f52d627-7a84-4f13-afa1-a71185b51722"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -157,10 +181,54 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""4f2cc243-84d4-4c38-bcab-ac5dabf515ae"",
                     ""path"": ""<Keyboard>/q"",
-                    ""interactions"": ""Press"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Skill1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d038dedd-3287-4fff-b535-f3013c2e2d95"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CameraRotate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""db700cc5-ec9e-406c-b6c7-a7c065e61ca7"",
+                    ""path"": ""<Mouse>/scroll"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CameraDistance"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0097c4d3-6a5b-49e5-9c70-1216a503b280"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": ""Hold"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AttackHold"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0af126eb-0300-4b24-b08a-77960c7466a9"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MousePosition"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -177,23 +245,12 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""d038dedd-3287-4fff-b535-f3013c2e2d95"",
-                    ""path"": ""<Mouse>/delta"",
-                    ""interactions"": ""Press"",
+                    ""id"": ""6ad328df-4cfc-4991-8851-8752bfef28a0"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""CameraRotate"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""db700cc5-ec9e-406c-b6c7-a7c065e61ca7"",
-                    ""path"": ""<Mouse>/scroll"",
-                    ""interactions"": ""Press"",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""CameraDistance"",
+                    ""action"": ""Skill1Hold"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -206,11 +263,14 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
+        m_Player_AttackHold = m_Player.FindAction("AttackHold", throwIfNotFound: true);
         m_Player_Dodge = m_Player.FindAction("Dodge", throwIfNotFound: true);
         m_Player_Skill1 = m_Player.FindAction("Skill1", throwIfNotFound: true);
+        m_Player_Skill1Hold = m_Player.FindAction("Skill1Hold", throwIfNotFound: true);
         m_Player_Skill2 = m_Player.FindAction("Skill2", throwIfNotFound: true);
         m_Player_CameraRotate = m_Player.FindAction("CameraRotate", throwIfNotFound: true);
         m_Player_CameraDistance = m_Player.FindAction("CameraDistance", throwIfNotFound: true);
+        m_Player_MousePosition = m_Player.FindAction("MousePosition", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -262,22 +322,28 @@ public class @PlayerInput : IInputActionCollection, IDisposable
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Attack;
+    private readonly InputAction m_Player_AttackHold;
     private readonly InputAction m_Player_Dodge;
     private readonly InputAction m_Player_Skill1;
+    private readonly InputAction m_Player_Skill1Hold;
     private readonly InputAction m_Player_Skill2;
     private readonly InputAction m_Player_CameraRotate;
     private readonly InputAction m_Player_CameraDistance;
+    private readonly InputAction m_Player_MousePosition;
     public struct PlayerActions
     {
         private @PlayerInput m_Wrapper;
         public PlayerActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Attack => m_Wrapper.m_Player_Attack;
+        public InputAction @AttackHold => m_Wrapper.m_Player_AttackHold;
         public InputAction @Dodge => m_Wrapper.m_Player_Dodge;
         public InputAction @Skill1 => m_Wrapper.m_Player_Skill1;
+        public InputAction @Skill1Hold => m_Wrapper.m_Player_Skill1Hold;
         public InputAction @Skill2 => m_Wrapper.m_Player_Skill2;
         public InputAction @CameraRotate => m_Wrapper.m_Player_CameraRotate;
         public InputAction @CameraDistance => m_Wrapper.m_Player_CameraDistance;
+        public InputAction @MousePosition => m_Wrapper.m_Player_MousePosition;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -293,12 +359,18 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @Attack.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
                 @Attack.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
                 @Attack.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
+                @AttackHold.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttackHold;
+                @AttackHold.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttackHold;
+                @AttackHold.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttackHold;
                 @Dodge.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDodge;
                 @Dodge.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDodge;
                 @Dodge.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDodge;
                 @Skill1.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkill1;
                 @Skill1.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkill1;
                 @Skill1.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkill1;
+                @Skill1Hold.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkill1Hold;
+                @Skill1Hold.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkill1Hold;
+                @Skill1Hold.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkill1Hold;
                 @Skill2.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkill2;
                 @Skill2.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkill2;
                 @Skill2.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkill2;
@@ -308,6 +380,9 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @CameraDistance.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCameraDistance;
                 @CameraDistance.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCameraDistance;
                 @CameraDistance.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCameraDistance;
+                @MousePosition.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMousePosition;
+                @MousePosition.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMousePosition;
+                @MousePosition.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMousePosition;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -318,12 +393,18 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @Attack.started += instance.OnAttack;
                 @Attack.performed += instance.OnAttack;
                 @Attack.canceled += instance.OnAttack;
+                @AttackHold.started += instance.OnAttackHold;
+                @AttackHold.performed += instance.OnAttackHold;
+                @AttackHold.canceled += instance.OnAttackHold;
                 @Dodge.started += instance.OnDodge;
                 @Dodge.performed += instance.OnDodge;
                 @Dodge.canceled += instance.OnDodge;
                 @Skill1.started += instance.OnSkill1;
                 @Skill1.performed += instance.OnSkill1;
                 @Skill1.canceled += instance.OnSkill1;
+                @Skill1Hold.started += instance.OnSkill1Hold;
+                @Skill1Hold.performed += instance.OnSkill1Hold;
+                @Skill1Hold.canceled += instance.OnSkill1Hold;
                 @Skill2.started += instance.OnSkill2;
                 @Skill2.performed += instance.OnSkill2;
                 @Skill2.canceled += instance.OnSkill2;
@@ -333,6 +414,9 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @CameraDistance.started += instance.OnCameraDistance;
                 @CameraDistance.performed += instance.OnCameraDistance;
                 @CameraDistance.canceled += instance.OnCameraDistance;
+                @MousePosition.started += instance.OnMousePosition;
+                @MousePosition.performed += instance.OnMousePosition;
+                @MousePosition.canceled += instance.OnMousePosition;
             }
         }
     }
@@ -341,10 +425,13 @@ public class @PlayerInput : IInputActionCollection, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
+        void OnAttackHold(InputAction.CallbackContext context);
         void OnDodge(InputAction.CallbackContext context);
         void OnSkill1(InputAction.CallbackContext context);
+        void OnSkill1Hold(InputAction.CallbackContext context);
         void OnSkill2(InputAction.CallbackContext context);
         void OnCameraRotate(InputAction.CallbackContext context);
         void OnCameraDistance(InputAction.CallbackContext context);
+        void OnMousePosition(InputAction.CallbackContext context);
     }
 }

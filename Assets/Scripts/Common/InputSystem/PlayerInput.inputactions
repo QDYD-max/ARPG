@@ -22,6 +22,14 @@
                     "interactions": ""
                 },
                 {
+                    "name": "AttackHold",
+                    "type": "Button",
+                    "id": "43845cb0-52f8-4f2d-bf1a-425b0f669721",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "Dodge",
                     "type": "Button",
                     "id": "3ca124ac-8da5-45f7-8c5a-f5c22e6042dc",
@@ -35,7 +43,15 @@
                     "id": "1c444c64-9719-420e-8e3d-3d6d28180d26",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press(behavior=1)"
+                },
+                {
+                    "name": "Skill1Hold",
+                    "type": "Button",
+                    "id": "43083780-bebb-411b-9f0f-4021cd15271e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold"
                 },
                 {
                     "name": "Skill2",
@@ -43,7 +59,7 @@
                     "id": "bbf99c3d-2b50-4ebf-94fc-908079914999",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press(behavior=1)"
                 },
                 {
                     "name": "CameraRotate",
@@ -57,6 +73,14 @@
                     "name": "CameraDistance",
                     "type": "Value",
                     "id": "5bfcb733-afa6-41ff-9d13-9ccb69f9237e",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "MousePosition",
+                    "type": "Value",
+                    "id": "4f52d627-7a84-4f13-afa1-a71185b51722",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
@@ -144,10 +168,54 @@
                     "name": "",
                     "id": "4f2cc243-84d4-4c38-bcab-ac5dabf515ae",
                     "path": "<Keyboard>/q",
-                    "interactions": "Press",
+                    "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Skill1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d038dedd-3287-4fff-b535-f3013c2e2d95",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CameraRotate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "db700cc5-ec9e-406c-b6c7-a7c065e61ca7",
+                    "path": "<Mouse>/scroll",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CameraDistance",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0097c4d3-6a5b-49e5-9c70-1216a503b280",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AttackHold",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0af126eb-0300-4b24-b08a-77960c7466a9",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MousePosition",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -164,23 +232,12 @@
                 },
                 {
                     "name": "",
-                    "id": "d038dedd-3287-4fff-b535-f3013c2e2d95",
-                    "path": "<Mouse>/delta",
-                    "interactions": "Press",
+                    "id": "6ad328df-4cfc-4991-8851-8752bfef28a0",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "CameraRotate",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "db700cc5-ec9e-406c-b6c7-a7c065e61ca7",
-                    "path": "<Mouse>/scroll",
-                    "interactions": "Press",
-                    "processors": "",
-                    "groups": "",
-                    "action": "CameraDistance",
+                    "action": "Skill1Hold",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

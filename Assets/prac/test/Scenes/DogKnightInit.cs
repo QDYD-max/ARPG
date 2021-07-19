@@ -26,7 +26,7 @@ public class DogKnightInit : MonoBehaviour
     {
         if (GetComponent<RoleCtrl>().curNumeric[NumericType.Hp] < 0)
         {
-            Debug.Log("Dog Knight Dead");
+            //Debug.Log("Dog Knight Dead");
         }
     }
 }

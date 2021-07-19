@@ -6,6 +6,13 @@ using Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
+
+public enum WeaponState
+{
+    Sword,
+    Gun
+}
 
 public class MainPlayer : MonoSingleton<MainPlayer>, PlayerInput.IPlayerActions
 {
@@ -14,14 +21,22 @@ public class MainPlayer : MonoSingleton<MainPlayer>, PlayerInput.IPlayerActions
     public PlayerInput playerInput;
 
     private GameObject _vCamera;
+    private CinemachineVirtualCamera _virtueCamera;
 
     //连击输入相关，具体由动画事件修改
+    private WeaponState _weaponState = WeaponState.Sword;
     public bool isAttack = false;
     private int attackCombo = 1;
+
+
     private float _mosueDeltaX = 0;
     private float _mosueDeltaY = 0;
 
     private float timer;
+
+    private Vector2 _mousePos;
+
+    private bool _isSkill1Hold = false;
 
 
     private void Awake()
@@ -40,8 +55,8 @@ public class MainPlayer : MonoSingleton<MainPlayer>, PlayerInput.IPlayerActions
         Init3RdCamera();
 
 
-        CinemachineVirtualCamera _virtue3RdCamera = _vCamera.GetComponent<CinemachineVirtualCamera>();
-        _virtue3RdCamera.Follow = mainPlayerCtrl.gameObject.transform;
+        _virtueCamera = _vCamera.GetComponent<CinemachineVirtualCamera>();
+        _virtueCamera.Follow = mainPlayerCtrl.gameObject.transform;
     }
 
     void OnGUI()
@@ -141,31 +156,68 @@ public class MainPlayer : MonoSingleton<MainPlayer>, PlayerInput.IPlayerActions
         }
     }
 
-
     //-----镭射枪内容
     private bool flag = false;
     GameObject effect;
+    GameObject ballPrefab;
+    private List<GameObject> ballList = new List<GameObject>();
 
-    private IEnumerator CoBuffOnTick(GameObject entity)
+    private IEnumerator CoLesserGunAttack(RaycastHit hit)
     {
+        GameObject entity = hit.collider.gameObject;
         while (flag)
         {
             yield return new WaitForSeconds(0.2f);
-            print(entity.GetComponent<NumericComponent>()[NumericType.HpBase]);
             EventCenter.Instance.EventTrigger<RoleBattle>(CEventType.RoleBattle, new RoleBattle()
             {
                 Attacker = mainPlayerCtrl.gameObject,
                 DamagedEntity = entity,
                 value = -10
             });
+            //从命中位置生成小球
+            GameObject ballEntity = GameObject.Instantiate(ballPrefab,
+                hit.point + new Vector3(Random.Range(0, 0.4f), Random.Range(0, 0.4f), Random.Range(0, 0.4f)),
+                Quaternion.identity);
+            ballEntity.GetComponent<Rigidbody>().AddExplosionForce(200f, hit.point, 2f);
+            ballList.Add(ballEntity);
         }
 
         yield return null;
     }
     //-----
 
+    //-----领域展开内容
+    private IEnumerator BurningScope()
+    {
+        for (int i = 0; i < 10; ++i)
+        {
+            Collider[] colliders = Physics.OverlapSphere(mainPlayerCtrl.transform.position, 3f, 1 << LayerMask.NameToLayer($"Enemy"));
+            foreach (var collider in colliders)
+            {
+                EventCenter.Instance.EventTrigger<RoleBattle>(CEventType.RoleBattle, new RoleBattle()
+                {
+                    Attacker = mainPlayerCtrl.gameObject,
+                    DamagedEntity = collider.gameObject,
+                    value = -10
+                });
+                //从命中位置生成小球
+                GameObject ballEntity = GameObject.Instantiate(ballPrefab, collider.transform);
+            }
+
+            yield return new WaitForSeconds(1f);
+        }
+
+        yield return null;
+    }
+    //---------
+
     public void OnAttack(InputAction.CallbackContext context)
     {
+        if (ballPrefab == null)
+        {
+            ballPrefab = Resources.Load<GameObject>("ball");
+        }
+
         if (effect == null)
         {
             GameObject effectPrefab = Resources.Load<GameObject>("LaserBeam");
@@ -181,43 +233,77 @@ public class MainPlayer : MonoSingleton<MainPlayer>, PlayerInput.IPlayerActions
             case InputActionPhase.Started:
                 break;
             case InputActionPhase.Performed:
-            {
-                Vector3 pos = mainPlayerCtrl.transform.Find("GunPos").position;
-                //--------------交互部分
-                mainPlayerCtrl.Animator.SetBool("ToIdle", false);
-                mainPlayerCtrl.Animator.SetInteger("ToAttack", 5);
-                //--------------特效部分
-                effect.transform.position = pos; //有枪模型的话应该跟随枪 TODO
-                effect.transform.forward = mainPlayerCtrl.transform.forward;
-                effect.SetActive(true);
-                //------------程序判断部分
-                RaycastHit hit;
-                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit,
-                    Mathf.Infinity, 1 << LayerMask.NameToLayer($"Enemy")))
+                switch (_weaponState)
                 {
-                    flag = true;
-                    StartCoroutine(CoBuffOnTick(hit.collider.gameObject));
-                    Debug.Log("Did Hit");
-                }
-                else
-                {
-                    Debug.Log("Did not Hit");
+                    case WeaponState.Sword:
+
+                        break;
+                    case WeaponState.Gun:
+
+                        #region 镭射枪
+
+                        Vector3 pos = mainPlayerCtrl.transform.Find("GunPos").position;
+                        //--------------交互部分
+                        mainPlayerCtrl.Animator.SetBool("ToIdle", false);
+                        mainPlayerCtrl.Animator.SetInteger("ToAttack", 5);
+                        //--------------特效部分
+                        effect.transform.position = pos; //有枪模型的话应该跟随枪 TODO
+                        effect.transform.forward = mainPlayerCtrl.transform.forward;
+                        effect.SetActive(true);
+                        //------------程序判断部分
+                        /*Vector3 screenPos = new Vector3(_mousePos.x, _mousePos.y,
+                            Mathf.Abs(Camera.main.transform.position.z));
+                        
+                        Vector3 worldPos =
+                            Camera.main.ScreenToWorldPoint(screenPos);*/
+
+                        RaycastHit hit;
+                        if (Physics.Raycast(pos, mainPlayerCtrl.transform.forward, out hit,
+                            Mathf.Infinity, 1 << LayerMask.NameToLayer($"Enemy")))
+                        {
+                            flag = true;
+                            StartCoroutine(CoLesserGunAttack(hit));
+                            Debug.Log("Did Hit");
+                        }
+                        else
+                        {
+                            Debug.Log("Did not Hit");
+                        }
+
+                        #endregion
+
+                        break;
                 }
 
                 break;
-            }
             case InputActionPhase.Canceled:
-                //-------松开结束镭射枪内容
-                mainPlayerCtrl.Animator.SetInteger("ToAttack", 0);
-                mainPlayerCtrl.Animator.SetBool("ToIdle", true);
-                flag = false;
-                effect.SetActive(false);
+                switch (_weaponState)
+                {
+                    case WeaponState.Sword:
+                        break;
+                    case WeaponState.Gun:
+
+                        #region 镭射枪
+
+                        //-------松开结束镭射枪内容
+                        mainPlayerCtrl.Animator.SetInteger("ToAttack", 0);
+                        mainPlayerCtrl.Animator.SetBool("ToIdle", true);
+                        flag = false;
+                        effect.SetActive(false);
+
+                        #endregion
+
+                        break;
+                }
+
                 break;
-            default:
-                throw new ArgumentOutOfRangeException();
         }
+
         //连击放在这里完成
-        /*if (!isAttack)
+
+        #region 武士刀
+
+        if (!isAttack)
         {
             mainPlayerCtrl.direction = Vector2.zero;
             isAttack = true;
@@ -227,7 +313,9 @@ public class MainPlayer : MonoSingleton<MainPlayer>, PlayerInput.IPlayerActions
             //mainPlayerCtrl.curRoleFSM.ChangeState(RoleState.Attack, attackCombo);
             timer = mainPlayerCtrl.Animator.GetCurrentAnimatorClipInfo(0).Length;
             attackCombo++;
-        }*/
+        }
+
+        #endregion
     }
 
     public void OnDodge(InputAction.CallbackContext context)
@@ -239,18 +327,56 @@ public class MainPlayer : MonoSingleton<MainPlayer>, PlayerInput.IPlayerActions
     public void OnSkill1(InputAction.CallbackContext context)
     {
         //技能1 小技能
-        Debug.Log("小技能");
-        mainPlayerCtrl.Animator.Play("Attack_04");
+        switch (context.phase)
+        {
+            case InputActionPhase.Started:
+                break;
+            case InputActionPhase.Performed:
+                if (!_isSkill1Hold)
+                {
+                    //小技能单击形态
+                    for (int i = 0; i < ballList.Count; i++)
+                    {
+                        ballList[i].GetComponent<Rigidbody>().velocity =
+                            (mainPlayerCtrl.transform.position - ballList[i].transform.position).normalized * 10;
+                        ballList[i].GetComponent<BallCtrl>().isActivate = true;
+                    }
+
+                    ballList.Clear();
+                }
+
+                _isSkill1Hold = false;
+                break;
+            case InputActionPhase.Canceled:
+                break;
+        }
+    }
+
+    public void OnSkill1Hold(InputAction.CallbackContext context)
+    {
+        switch (context.phase)
+        {
+            case InputActionPhase.Started:
+                break;
+            case InputActionPhase.Performed:
+                //小技能长按形态
+                _isSkill1Hold = true;
+                for (int i = 0; i < ballList.Count; i++)
+                {
+                    ballList[i].GetComponent<Rigidbody>().velocity = Vector3.zero;
+                    ballList[i].GetComponent<BallCtrl>().BallBoom();
+                }
+
+                ballList.Clear();
+                break;
+            case InputActionPhase.Canceled:
+                break;
+        }
     }
 
     public void OnSkill2(InputAction.CallbackContext context)
     {
         //技能2 大招
-        Debug.Log("大招");
-    }
-
-    public void OnCameraRotate(InputAction.CallbackContext context)
-    {
         switch (context.phase)
         {
             case InputActionPhase.Disabled:
@@ -260,18 +386,22 @@ public class MainPlayer : MonoSingleton<MainPlayer>, PlayerInput.IPlayerActions
             case InputActionPhase.Started:
                 break;
             case InputActionPhase.Performed:
-                _mosueDeltaX = context.ReadValue<Vector2>().x;
-                _mosueDeltaY = context.ReadValue<Vector2>().y;
+                StartCoroutine(BurningScope());
                 break;
             case InputActionPhase.Canceled:
-                _mosueDeltaX = 0;
-                _mosueDeltaY = 0;
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
         }
+    }
 
-        _mosueDeltaY /= 5;
+    public void OnCameraRotate(InputAction.CallbackContext context)
+    {
+        _mosueDeltaX = context.ReadValue<Vector2>().x;
+        _mosueDeltaY = context.ReadValue<Vector2>().y;
+
+        _mosueDeltaX /= 20;
+        _mosueDeltaY /= 100;
 
         float rotateX = _vCamera.transform.localEulerAngles.x + _mosueDeltaY;
         float rotateY = _vCamera.transform.localEulerAngles.y + _mosueDeltaX;
@@ -293,7 +423,29 @@ public class MainPlayer : MonoSingleton<MainPlayer>, PlayerInput.IPlayerActions
 
     public void OnCameraDistance(InputAction.CallbackContext context)
     {
-        Debug.Log("摄像机距离");
+        //1.5~7
+        Vector2 scrollVector2 = context.ReadValue<Vector2>();
+        float distanceChange = scrollVector2.y * 0.01f;
+        CinemachineFramingTransposer transposer = _virtueCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
+        transposer.m_CameraDistance = Mathf.Clamp(transposer.m_CameraDistance - distanceChange, 1.5f, 7f);
+    }
+
+    public void OnMousePosition(InputAction.CallbackContext context)
+    {
+        _mousePos = context.ReadValue<Vector2>();
+    }
+
+    public void OnAttackHold(InputAction.CallbackContext context)
+    {
+        switch (context.phase)
+        {
+            case InputActionPhase.Performed:
+
+                break;
+            case InputActionPhase.Canceled:
+
+                break;
+        }
     }
 
     private void InitMainPlayer()
