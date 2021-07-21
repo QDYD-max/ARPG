@@ -47,6 +47,6 @@ public class BallCtrl : MonoBehaviour
         }
         
         gameObject.SetActive(false);
-        Destroy(this);
+        Destroy(gameObject);
     }
 }

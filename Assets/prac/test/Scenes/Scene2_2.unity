@@ -1326,6 +1326,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CM3rdPersonNormal
       objectReference: {fileID: 0}
+    - target: {fileID: 3957912593392160714, guid: cfa6cc0f85dc7eb4a8c7d87a847218e2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfa6cc0f85dc7eb4a8c7d87a847218e2, type: 3}
 --- !u!224 &1692136583 stripped

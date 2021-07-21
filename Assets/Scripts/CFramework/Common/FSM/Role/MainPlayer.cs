@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using CFramework;
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -24,19 +25,23 @@ public class MainPlayer : MonoSingleton<MainPlayer>, PlayerInput.IPlayerActions
     private CinemachineVirtualCamera _virtueCamera;
 
     //连击输入相关，具体由动画事件修改
-    private WeaponState _weaponState = WeaponState.Sword;
     public bool isAttack = false;
-    private int attackCombo = 1;
-
 
     private float _mosueDeltaX = 0;
     private float _mosueDeltaY = 0;
-
-    private float timer;
-
     private Vector2 _mousePos;
 
     private bool _isSkill1Hold = false;
+
+    private UnityAction Attack;
+    private UnityAction AttackHold;
+    private UnityAction AttackCancle;
+    private UnityAction Skill1;
+    private UnityAction Skill1Hold;
+    private UnityAction Skill1Cancle;
+    private UnityAction Skill2;
+    private UnityAction Skill2Hold;
+    private UnityAction Skill2Cancle;
 
 
     private void Awake()
@@ -54,9 +59,11 @@ public class MainPlayer : MonoSingleton<MainPlayer>, PlayerInput.IPlayerActions
         InitMainPlayer();
         Init3RdCamera();
 
-
         _virtueCamera = _vCamera.GetComponent<CinemachineVirtualCamera>();
-        _virtueCamera.Follow = mainPlayerCtrl.gameObject.transform;
+        _virtueCamera.Follow = mainPlayer.transform;
+        
+        
+        ChangeWeapon(WeaponState.Gun);
     }
 
     void OnGUI()
@@ -112,18 +119,6 @@ public class MainPlayer : MonoSingleton<MainPlayer>, PlayerInput.IPlayerActions
         playerInput.Player.Enable();
     }
 
-    private void FixedUpdate()
-    {
-        if (timer != 0)
-        {
-            timer -= Time.deltaTime;
-            if (timer <= 0)
-            {
-                attackCombo = 1;
-                isAttack = false;
-            }
-        }
-    }
 
     private void OnDisable()
     {
@@ -156,166 +151,27 @@ public class MainPlayer : MonoSingleton<MainPlayer>, PlayerInput.IPlayerActions
         }
     }
 
-    //-----镭射枪内容
-    private bool flag = false;
-    GameObject effect;
-    GameObject ballPrefab;
-    private List<GameObject> ballList = new List<GameObject>();
-
-    private IEnumerator CoLesserGunAttack(RaycastHit hit)
-    {
-        GameObject entity = hit.collider.gameObject;
-        while (flag)
-        {
-            yield return new WaitForSeconds(0.2f);
-            EventCenter.Instance.EventTrigger<RoleBattle>(CEventType.RoleBattle, new RoleBattle()
-            {
-                Attacker = mainPlayerCtrl.gameObject,
-                DamagedEntity = entity,
-                value = -10
-            });
-            //从命中位置生成小球
-            GameObject ballEntity = GameObject.Instantiate(ballPrefab,
-                hit.point + new Vector3(Random.Range(0, 0.4f), Random.Range(0, 0.4f), Random.Range(0, 0.4f)),
-                Quaternion.identity);
-            ballEntity.GetComponent<Rigidbody>().AddExplosionForce(200f, hit.point, 2f);
-            ballList.Add(ballEntity);
-        }
-
-        yield return null;
-    }
-    //-----
-
-    //-----领域展开内容
-    private IEnumerator BurningScope()
-    {
-        for (int i = 0; i < 10; ++i)
-        {
-            Collider[] colliders = Physics.OverlapSphere(mainPlayerCtrl.transform.position, 3f, 1 << LayerMask.NameToLayer($"Enemy"));
-            foreach (var collider in colliders)
-            {
-                EventCenter.Instance.EventTrigger<RoleBattle>(CEventType.RoleBattle, new RoleBattle()
-                {
-                    Attacker = mainPlayerCtrl.gameObject,
-                    DamagedEntity = collider.gameObject,
-                    value = -10
-                });
-                //从命中位置生成小球
-                GameObject ballEntity = GameObject.Instantiate(ballPrefab, collider.transform);
-            }
-
-            yield return new WaitForSeconds(1f);
-        }
-
-        yield return null;
-    }
-    //---------
-
     public void OnAttack(InputAction.CallbackContext context)
     {
-        if (ballPrefab == null)
-        {
-            ballPrefab = Resources.Load<GameObject>("ball");
-        }
-
-        if (effect == null)
-        {
-            GameObject effectPrefab = Resources.Load<GameObject>("LaserBeam");
-            effect = GameObject.Instantiate(effectPrefab);
-        }
-
         switch (context.phase)
         {
-            case InputActionPhase.Disabled:
-                break;
-            case InputActionPhase.Waiting:
-                break;
-            case InputActionPhase.Started:
-                break;
             case InputActionPhase.Performed:
-                switch (_weaponState)
-                {
-                    case WeaponState.Sword:
-
-                        break;
-                    case WeaponState.Gun:
-
-                        #region 镭射枪
-
-                        Vector3 pos = mainPlayerCtrl.transform.Find("GunPos").position;
-                        //--------------交互部分
-                        mainPlayerCtrl.Animator.SetBool("ToIdle", false);
-                        mainPlayerCtrl.Animator.SetInteger("ToAttack", 5);
-                        //--------------特效部分
-                        effect.transform.position = pos; //有枪模型的话应该跟随枪 TODO
-                        effect.transform.forward = mainPlayerCtrl.transform.forward;
-                        effect.SetActive(true);
-                        //------------程序判断部分
-                        /*Vector3 screenPos = new Vector3(_mousePos.x, _mousePos.y,
-                            Mathf.Abs(Camera.main.transform.position.z));
-                        
-                        Vector3 worldPos =
-                            Camera.main.ScreenToWorldPoint(screenPos);*/
-
-                        RaycastHit hit;
-                        if (Physics.Raycast(pos, mainPlayerCtrl.transform.forward, out hit,
-                            Mathf.Infinity, 1 << LayerMask.NameToLayer($"Enemy")))
-                        {
-                            flag = true;
-                            StartCoroutine(CoLesserGunAttack(hit));
-                            Debug.Log("Did Hit");
-                        }
-                        else
-                        {
-                            Debug.Log("Did not Hit");
-                        }
-
-                        #endregion
-
-                        break;
-                }
-
+                Attack?.Invoke();
                 break;
             case InputActionPhase.Canceled:
-                switch (_weaponState)
-                {
-                    case WeaponState.Sword:
-                        break;
-                    case WeaponState.Gun:
-
-                        #region 镭射枪
-
-                        //-------松开结束镭射枪内容
-                        mainPlayerCtrl.Animator.SetInteger("ToAttack", 0);
-                        mainPlayerCtrl.Animator.SetBool("ToIdle", true);
-                        flag = false;
-                        effect.SetActive(false);
-
-                        #endregion
-
-                        break;
-                }
-
+                AttackCancle?.Invoke();
                 break;
         }
+    }
 
-        //连击放在这里完成
-
-        #region 武士刀
-
-        if (!isAttack)
+    public void OnAttackHold(InputAction.CallbackContext context)
+    {
+        switch (context.phase)
         {
-            mainPlayerCtrl.direction = Vector2.zero;
-            isAttack = true;
-            if (attackCombo > 3)
-                attackCombo = 1;
-            mainPlayerCtrl.Animator.Play("Attack_0" + attackCombo);
-            //mainPlayerCtrl.curRoleFSM.ChangeState(RoleState.Attack, attackCombo);
-            timer = mainPlayerCtrl.Animator.GetCurrentAnimatorClipInfo(0).Length;
-            attackCombo++;
+            case InputActionPhase.Performed:
+                AttackHold?.Invoke();
+                break;
         }
-
-        #endregion
     }
 
     public void OnDodge(InputAction.CallbackContext context)
@@ -329,22 +185,11 @@ public class MainPlayer : MonoSingleton<MainPlayer>, PlayerInput.IPlayerActions
         //技能1 小技能
         switch (context.phase)
         {
-            case InputActionPhase.Started:
-                break;
             case InputActionPhase.Performed:
                 if (!_isSkill1Hold)
                 {
-                    //小技能单击形态
-                    for (int i = 0; i < ballList.Count; i++)
-                    {
-                        ballList[i].GetComponent<Rigidbody>().velocity =
-                            (mainPlayerCtrl.transform.position - ballList[i].transform.position).normalized * 10;
-                        ballList[i].GetComponent<BallCtrl>().isActivate = true;
-                    }
-
-                    ballList.Clear();
+                    Skill1.Invoke();
                 }
-
                 _isSkill1Hold = false;
                 break;
             case InputActionPhase.Canceled:
@@ -356,20 +201,10 @@ public class MainPlayer : MonoSingleton<MainPlayer>, PlayerInput.IPlayerActions
     {
         switch (context.phase)
         {
-            case InputActionPhase.Started:
-                break;
             case InputActionPhase.Performed:
                 //小技能长按形态
+                Skill1Hold?.Invoke();
                 _isSkill1Hold = true;
-                for (int i = 0; i < ballList.Count; i++)
-                {
-                    ballList[i].GetComponent<Rigidbody>().velocity = Vector3.zero;
-                    ballList[i].GetComponent<BallCtrl>().BallBoom();
-                }
-
-                ballList.Clear();
-                break;
-            case InputActionPhase.Canceled:
                 break;
         }
     }
@@ -379,20 +214,43 @@ public class MainPlayer : MonoSingleton<MainPlayer>, PlayerInput.IPlayerActions
         //技能2 大招
         switch (context.phase)
         {
-            case InputActionPhase.Disabled:
-                break;
-            case InputActionPhase.Waiting:
-                break;
-            case InputActionPhase.Started:
-                break;
             case InputActionPhase.Performed:
-                StartCoroutine(BurningScope());
+                Skill2?.Invoke();
                 break;
             case InputActionPhase.Canceled:
+                Skill2Cancle?.Invoke();
                 break;
-            default:
-                throw new ArgumentOutOfRangeException();
         }
+    }
+
+    public void ChangeWeapon(WeaponState state)
+    {
+        ClearWeaponSkill();
+        switch (state)
+        {
+            case WeaponState.Sword:
+                Skill1 = mainPlayer.GetComponent<SwordSkillComponent>().Execute;
+                break;
+            case WeaponState.Gun:
+                Attack = mainPlayer.GetComponent<LesserGunAttackComponent>().Execute;
+                AttackCancle = mainPlayer.GetComponent<LesserGunAttackComponent>().Cancle;
+                Skill1 = mainPlayer.GetComponent<LesserGunSkillComponent>().Execute;
+                Skill1Hold = mainPlayer.GetComponent<LesserGunSkillComponent>().ExecuteHold;
+                break;
+        }
+    }
+
+    public void ClearWeaponSkill()
+    {
+        Attack = null;
+        AttackHold = null;
+        AttackCancle = null;
+        Skill1 = null;
+        Skill1Hold = null;
+        Skill1Cancle = null;
+        Skill2 = null;
+        Skill2Hold = null;
+        Skill2Cancle = null;
     }
 
     public void OnCameraRotate(InputAction.CallbackContext context)
@@ -435,25 +293,17 @@ public class MainPlayer : MonoSingleton<MainPlayer>, PlayerInput.IPlayerActions
         _mousePos = context.ReadValue<Vector2>();
     }
 
-    public void OnAttackHold(InputAction.CallbackContext context)
-    {
-        switch (context.phase)
-        {
-            case InputActionPhase.Performed:
-
-                break;
-            case InputActionPhase.Canceled:
-
-                break;
-        }
-    }
-
     private void InitMainPlayer()
     {
         GameObject mainPlayerPrefab = ResourceLoader.Load<GameObject>(ResourceType.Role, "MainPlayer");
         mainPlayer = Instantiate(mainPlayerPrefab);
         mainPlayerCtrl = mainPlayer.GetComponent<RoleCtrl>();
         mainPlayerCtrl.Init(RoleType.Player);
+        mainPlayer.AddComponent<SwordSkillComponent>();
+        mainPlayer.AddComponent<SwordAttackComponent>();
+        mainPlayer.AddComponent<LesserGunAttackComponent>();
+        mainPlayer.AddComponent<LesserGunSkillComponent>();
+        
     }
 
     private void Init3RdCamera()
