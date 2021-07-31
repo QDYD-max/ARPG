@@ -2,7 +2,7 @@
 using TMPro.EditorUtilities;
 using UnityEngine;
 
-namespace CFramework.BT
+namespace CFramework
 {
     public class WaitNode : ActionNode
     {
@@ -20,7 +20,7 @@ namespace CFramework.BT
 
         protected override void OnStop()
         {
-            
+            Debug.Log("等待结束");
         }
     }
 }

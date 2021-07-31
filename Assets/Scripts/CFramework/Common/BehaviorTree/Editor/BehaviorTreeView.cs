@@ -4,9 +4,10 @@ using System.Linq;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEditor.VersionControl;
+using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace CFramework.BT
+namespace CFramework
 {
     public class BehaviorTreeView : GraphView
     {
@@ -28,7 +29,7 @@ namespace CFramework.BT
 
             var styleSheet =
                 AssetDatabase.LoadAssetAtPath<StyleSheet>(
-                    "Assets/Scripts/Framework/Common/BehaviorTree/Editor/BehaviorTreeEditor.uss");
+                    BehaviorTreeEditorConfig.path + "BehaviorTreeEditor.uss");
             styleSheets.Add(styleSheet);
         }
 
@@ -37,30 +38,30 @@ namespace CFramework.BT
             return GetNodeByGuid(node.guid) as NodeView;
         }
 
-        internal void PopulateView(BehaviorTree tree)
+        internal void PopulateView(BehaviorTree treeView)
         {
             //根据选中的BehaviorTree，清除当前面板，创建节点
             //具体操作围绕GraphView的Element操作展开
-            this.tree = tree;
+            this.tree = treeView;
 
             graphViewChanged -= OnGraphViewChanged;
             DeleteElements(graphElements.ToList());
             graphViewChanged += OnGraphViewChanged;
 
-            if (tree.rootNode == null)
+            if (treeView.rootNode == null)
             {
-                tree.rootNode = tree.CreateNode(typeof(RootNode)) as RootNode;
-                EditorUtility.SetDirty(tree);
+                treeView.rootNode = treeView.CreateNode(typeof(RootNode)) as RootNode;
+                EditorUtility.SetDirty(treeView);
                 AssetDatabase.SaveAssets();
             }
 
             //创建节点
-            tree.nodes.ForEach(n => CreateNodeView(n));
+            treeView.nodes.ForEach(n => CreateNodeView(n));
 
             //创建 边
-            tree.nodes.ForEach(n =>
+            treeView.nodes.ForEach(n =>
             {
-                var children = tree.GetChildren(n);
+                var children = treeView.GetChildren(n);
                 children.ForEach(c =>
                 {
                     NodeView parentView = FindNodeView(n);

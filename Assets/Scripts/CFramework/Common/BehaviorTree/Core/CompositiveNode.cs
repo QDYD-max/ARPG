@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace CFramework.BT
+namespace CFramework
 {
     public abstract class CompositeNode : Node
     {
@@ -13,12 +13,12 @@ namespace CFramework.BT
             return node;
         }
 
-        public override void Activate(Database database)
+        public override void Activate(GameObject go)
         {
-            base.Activate(database);
+            base.Activate(go);
             foreach (Node child in children)
             {
-                child.Activate(database);
+                child.Activate(go);
             }
         }
     }

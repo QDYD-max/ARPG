@@ -43,6 +43,14 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
+                    ""name"": ""AttackCancled"",
+                    ""type"": ""Button"",
+                    ""id"": ""742755cb-39de-4312-8b3a-9039602a2261"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
                     ""name"": ""Dodge"",
                     ""type"": ""Button"",
                     ""id"": ""3ca124ac-8da5-45f7-8c5a-f5c22e6042dc"",
@@ -253,6 +261,17 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""action"": ""Skill1Hold"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""802f3e83-29ac-481a-b7cf-f7318b81fc0d"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": ""Press(behavior=1)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AttackCancled"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -264,6 +283,7 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
         m_Player_AttackHold = m_Player.FindAction("AttackHold", throwIfNotFound: true);
+        m_Player_AttackCancled = m_Player.FindAction("AttackCancled", throwIfNotFound: true);
         m_Player_Dodge = m_Player.FindAction("Dodge", throwIfNotFound: true);
         m_Player_Skill1 = m_Player.FindAction("Skill1", throwIfNotFound: true);
         m_Player_Skill1Hold = m_Player.FindAction("Skill1Hold", throwIfNotFound: true);
@@ -323,6 +343,7 @@ public class @PlayerInput : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Attack;
     private readonly InputAction m_Player_AttackHold;
+    private readonly InputAction m_Player_AttackCancled;
     private readonly InputAction m_Player_Dodge;
     private readonly InputAction m_Player_Skill1;
     private readonly InputAction m_Player_Skill1Hold;
@@ -337,6 +358,7 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Attack => m_Wrapper.m_Player_Attack;
         public InputAction @AttackHold => m_Wrapper.m_Player_AttackHold;
+        public InputAction @AttackCancled => m_Wrapper.m_Player_AttackCancled;
         public InputAction @Dodge => m_Wrapper.m_Player_Dodge;
         public InputAction @Skill1 => m_Wrapper.m_Player_Skill1;
         public InputAction @Skill1Hold => m_Wrapper.m_Player_Skill1Hold;
@@ -362,6 +384,9 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @AttackHold.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttackHold;
                 @AttackHold.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttackHold;
                 @AttackHold.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttackHold;
+                @AttackCancled.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttackCancled;
+                @AttackCancled.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttackCancled;
+                @AttackCancled.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttackCancled;
                 @Dodge.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDodge;
                 @Dodge.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDodge;
                 @Dodge.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDodge;
@@ -396,6 +421,9 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @AttackHold.started += instance.OnAttackHold;
                 @AttackHold.performed += instance.OnAttackHold;
                 @AttackHold.canceled += instance.OnAttackHold;
+                @AttackCancled.started += instance.OnAttackCancled;
+                @AttackCancled.performed += instance.OnAttackCancled;
+                @AttackCancled.canceled += instance.OnAttackCancled;
                 @Dodge.started += instance.OnDodge;
                 @Dodge.performed += instance.OnDodge;
                 @Dodge.canceled += instance.OnDodge;
@@ -426,6 +454,7 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnAttackHold(InputAction.CallbackContext context);
+        void OnAttackCancled(InputAction.CallbackContext context);
         void OnDodge(InputAction.CallbackContext context);
         void OnSkill1(InputAction.CallbackContext context);
         void OnSkill1Hold(InputAction.CallbackContext context);

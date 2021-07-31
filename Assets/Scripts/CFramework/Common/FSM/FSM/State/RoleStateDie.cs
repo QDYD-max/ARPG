@@ -15,7 +15,7 @@ public class RoleStateDie : RoleStateAbstract
     {
         base.OnEnter();
         
-        CurRoleFSM.CurRoleCtrl.Animator.SetInteger(RoleAnimatorCondition.ToDie.ToString(), 1);
+        CurRoleFSM.CurRoleCtrl.curAnimator.SetInteger(RoleAnimatorCondition.ToDie.ToString(), 1);
     }
 
     /// <summary>

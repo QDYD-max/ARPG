@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-namespace CFramework.BT
+namespace CFramework
 {
     public class ParallelNode : CompositeNode
     {
-        public ParallelType Type;
+        public ParallelType parallelType;
         protected override void OnStart()
         {
             
@@ -13,7 +13,7 @@ namespace CFramework.BT
 
         protected override NodeState OnUpdate()
         {
-            switch (Type)
+            switch (parallelType)
             {
                 case ParallelType.And:
                     int count = 0;
@@ -22,18 +22,14 @@ namespace CFramework.BT
                         switch (child.Update())
                         {
                             case NodeState.Failure:
-                                return NodeState.Failure;
-                            case NodeState.Running:
-                                return NodeState.Running;
                             case NodeState.Success:
                                 ++count;
                                 break;
                         }
                     }
-
-                    if (count == children.Count)
-                        return NodeState.Success;
-                    break;
+                    
+                    return count == children.Count?NodeState.Success:NodeState.Running;
+                    
                 case ParallelType.Or:
                     foreach (var child in children)
                     {
@@ -41,15 +37,12 @@ namespace CFramework.BT
                         {
                             case NodeState.Failure:
                                 return NodeState.Failure;
-                            case NodeState.Running:
-                                return NodeState.Running;
                             case NodeState.Success:
                                 return NodeState.Success;
                         }
                     }
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
+                    return NodeState.Running;
+
             }
             
 

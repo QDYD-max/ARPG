@@ -18,7 +18,7 @@ public enum WeaponState
 public class MainPlayer : MonoSingleton<MainPlayer>, PlayerInput.IPlayerActions
 {
     public RoleCtrl mainPlayerCtrl;
-    private GameObject mainPlayer;
+    public GameObject mainPlayer;
     public PlayerInput playerInput;
 
     private GameObject _vCamera;
@@ -158,7 +158,14 @@ public class MainPlayer : MonoSingleton<MainPlayer>, PlayerInput.IPlayerActions
             case InputActionPhase.Performed:
                 Attack?.Invoke();
                 break;
-            case InputActionPhase.Canceled:
+        }
+    }
+    
+    public void OnAttackCancled(InputAction.CallbackContext context)
+    {
+        switch (context.phase)
+        {
+            case InputActionPhase.Performed:
                 AttackCancle?.Invoke();
                 break;
         }
@@ -298,7 +305,6 @@ public class MainPlayer : MonoSingleton<MainPlayer>, PlayerInput.IPlayerActions
         GameObject mainPlayerPrefab = ResourceLoader.Load<GameObject>(ResourceType.Role, "MainPlayer");
         mainPlayer = Instantiate(mainPlayerPrefab);
         mainPlayerCtrl = mainPlayer.GetComponent<RoleCtrl>();
-        mainPlayerCtrl.Init(RoleType.Player);
         mainPlayer.AddComponent<SwordSkillComponent>();
         mainPlayer.AddComponent<SwordAttackComponent>();
         mainPlayer.AddComponent<LesserGunAttackComponent>();

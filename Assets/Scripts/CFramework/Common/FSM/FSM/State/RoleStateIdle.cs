@@ -14,7 +14,7 @@ public class RoleStateIdle : RoleStateAbstract
     public override void OnEnter()
     {
         base.OnEnter();
-        CurRoleFSM.CurRoleCtrl.Animator.SetBool(RoleAnimatorCondition.ToIdle.ToString(), true);
+        CurRoleFSM.CurRoleCtrl.curAnimator.SetBool(RoleAnimatorCondition.ToIdle.ToString(), true);
     }
 
     /// <summary>
@@ -35,6 +35,6 @@ public class RoleStateIdle : RoleStateAbstract
     public override void OnLeave()
     {
         base.OnLeave();
-        CurRoleFSM.CurRoleCtrl.Animator.SetBool(RoleAnimatorCondition.ToIdle.ToString(), false);
+        CurRoleFSM.CurRoleCtrl.curAnimator.SetBool(RoleAnimatorCondition.ToIdle.ToString(), false);
     }
 }

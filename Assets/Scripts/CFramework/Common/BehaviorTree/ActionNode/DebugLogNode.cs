@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace CFramework.BT
+namespace CFramework
 {
     public class DebugLogNode : ActionNode
     {

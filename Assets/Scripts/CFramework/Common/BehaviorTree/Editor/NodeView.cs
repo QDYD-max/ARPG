@@ -2,7 +2,7 @@
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-namespace CFramework.BT
+namespace CFramework
 {
     public class NodeView : UnityEditor.Experimental.GraphView.Node
     {

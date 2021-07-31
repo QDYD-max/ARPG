@@ -30,6 +30,14 @@
                     "interactions": ""
                 },
                 {
+                    "name": "AttackCancled",
+                    "type": "Button",
+                    "id": "742755cb-39de-4312-8b3a-9039602a2261",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "Dodge",
                     "type": "Button",
                     "id": "3ca124ac-8da5-45f7-8c5a-f5c22e6042dc",
@@ -238,6 +246,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Skill1Hold",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "802f3e83-29ac-481a-b7cf-f7318b81fc0d",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AttackCancled",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

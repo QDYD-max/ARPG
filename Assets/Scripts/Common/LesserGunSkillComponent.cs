@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CFramework
 {
-    public class LesserGunSkillComponent : MonoBehaviour
+    public class LesserGunSkillComponent : SkillComponent
     {
         private List<GameObject> ballList;
         private void Awake()

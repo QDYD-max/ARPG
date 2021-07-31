@@ -7,56 +7,45 @@ using UnityEngine.UI;
 
 public class RoleCtrl : MonoBehaviour
 {
-    public Animator Animator;
-    public RoleType curRoleType = RoleType.None;
+    public Animator curAnimator;
     public IRoleAI curAI = null;
-    public CharacterController mainCharacterController;
+    public CharacterController curCharacterController;
     public RoleFSMMgr curRoleFSM = null;
-
     public NumericComponent curNumeric;
 
     //摄像机、移动相关
-    public Vector2 direction = Vector2.one;
+    public Vector3 direction = Vector3.one;
     public bool isRunState = false;
+    public GameObject target;
+    public bool isAttack = false;
 
     private void Awake()
     {
-        Animator = gameObject.GetComponent<Animator>();
         curNumeric = gameObject.AddComponent<NumericComponent>();
-        EventCenter.Instance.AddEventListener<RoleBattle>(CEventType.RoleBattle, RoleBattleDamage);
-    }
 
-    public void Init(RoleType roleType)
-    {
-        curRoleType = roleType;
+        EventCenter.Instance.AddEventListener<RoleBattle>(CEventType.RoleBattle, RoleBattleDamage);
     }
 
     // Use this for initialization
     void Start()
     {
-        mainCharacterController = GetComponent<CharacterController>();
-
+        curAnimator = gameObject.GetComponent<Animator>();
+        curCharacterController = GetComponent<CharacterController>();
+        curAI = GetComponent<IRoleAI>();
         curRoleFSM = new RoleFSMMgr(this);
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        if (curAI != null)
-        {
-            curAI.DoAI();
-        }
-
         if (curRoleFSM != null)
         {
             curRoleFSM.OnUpdate();
         }
-        
-        //if (mainCharacterController == null) return;
-
 
         //CheckGrounded();
     }
+    
 
     private void RoleBattleDamage(RoleBattle battle)
     {
@@ -69,9 +58,9 @@ public class RoleCtrl : MonoBehaviour
 
     void CheckGrounded()
     {
-        if (!mainCharacterController.isGrounded)
+        if (!curCharacterController.isGrounded)
         {
-            mainCharacterController.Move((transform.position + new Vector3(0, -1000, 0)) - transform.position);
+            curCharacterController.Move((transform.position + new Vector3(0, -1000, 0)) - transform.position);
         }
     }
 }

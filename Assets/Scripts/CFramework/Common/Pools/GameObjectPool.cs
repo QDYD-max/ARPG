@@ -21,7 +21,7 @@ namespace CFramework
             //resName
             GameObject goPrefab = ResourceLoader.Load<GameObject>(_resType, _resName);
 
-            GameObject go = GameObject.Instantiate(goPrefab, PoolManager.Instance.transform);
+            GameObject go = GameObject.Instantiate(goPrefab);
             go.name = "Pooled " + _resName;
             //go.hideFlags = HideFlags.HideInHierarchy;
             
@@ -31,19 +31,19 @@ namespace CFramework
         void ActionGameObjectOnGet(GameObject go)
         {
             go.SetActive(true);
-            if (go.GetComponent<ParticleSystem>() != null)
+            /*if (go.GetComponent<ParticleSystem>() != null)
             {
                 go.GetComponent<ParticleSystem>().Play();
-            }
+            }*/
         }
 
         void ActionGameObjectOnRelease(GameObject go)
         {
             go.SetActive(false);
-            if (go.GetComponent<ParticleSystem>() != null)
+            /*if (go.GetComponent<ParticleSystem>() != null)
             {
                 go.GetComponent<ParticleSystem>().Pause();
-            }
+            }*/
         }
 
         void ActionGameObjectOnDestroy(GameObject go)

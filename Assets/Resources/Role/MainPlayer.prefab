@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 8495811053791231381}
   m_Layer: 8
   m_Name: MainPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,12 +97,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e0bcec3c88a4f44a98ac6966bde8872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Animator: {fileID: 8495811053791231382}
-  curRoleType: 0
+  curAnimator: {fileID: 0}
   curAI: {fileID: 0}
-  mainCharacterController: {fileID: 0}
+  curCharacterController: {fileID: 0}
   curNumeric: {fileID: 0}
-  direction: {x: 1, y: 1}
+  direction: {x: 1, y: 1, z: 1}
   isRunState: 0
 --- !u!143 &8495811053791231380
 CharacterController:

@@ -39,7 +39,15 @@ namespace CFramework
             _gameObjectPoolsDic[resName].Pool.Release(go);
         }
 
-        public void Clear()
+        public void Clear(string resName)
+        {
+            if (_gameObjectPoolsDic.ContainsKey(resName))
+            {
+                _gameObjectPoolsDic[resName].Clear();
+            }
+        }
+
+        public void ClearAll()
         {
             foreach (var pool in _gameObjectPoolsDic)
             {

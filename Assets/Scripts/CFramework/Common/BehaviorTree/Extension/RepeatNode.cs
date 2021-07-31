@@ -1,4 +1,4 @@
-﻿namespace CFramework.BT
+﻿namespace CFramework
 {
     public class RepeatNode : DecoratorNode
     {

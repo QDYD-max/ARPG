@@ -14,7 +14,7 @@ public class RoleStateHurt : RoleStateAbstract
     public override void OnEnter()
     {
         base.OnEnter();
-        CurRoleFSM.CurRoleCtrl.Animator.SetInteger(RoleAnimatorCondition.ToHurt.ToString(), curStateValue);
+        CurRoleFSM.CurRoleCtrl.curAnimator.SetInteger(RoleAnimatorCondition.ToHurt.ToString(), curStateValue);
     }
 
     /// <summary>
@@ -36,6 +36,6 @@ public class RoleStateHurt : RoleStateAbstract
     public override void OnLeave()
     {
         base.OnLeave();
-        CurRoleFSM.CurRoleCtrl.Animator.SetInteger(RoleAnimatorCondition.ToHurt.ToString(), 0);
+        CurRoleFSM.CurRoleCtrl.curAnimator.SetInteger(RoleAnimatorCondition.ToHurt.ToString(), 0);
     }
 }

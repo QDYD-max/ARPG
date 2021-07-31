@@ -3,7 +3,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace CFramework.BT
+namespace CFramework
 {
     [CreateAssetMenu(fileName = "BehaviorTree", menuName = "QDYD")]
     public class BehaviorTree : ScriptableObject
@@ -12,9 +12,9 @@ namespace CFramework.BT
         public NodeState treeState = NodeState.Running;
         public List<Node> nodes = new List<Node>();
 
-        public void Activate(Database database)
+        public void Activate(GameObject go)
         {
-            rootNode.Activate(database);
+            rootNode.Activate(go);
         }
         
         public NodeState Update()

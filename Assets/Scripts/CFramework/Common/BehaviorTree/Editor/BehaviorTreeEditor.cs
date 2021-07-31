@@ -4,8 +4,13 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEditor.UIElements;
 
-namespace CFramework.BT
+namespace CFramework
 {
+    public static class BehaviorTreeEditorConfig
+    {
+        public static string path = "Assets/Scripts/CFramework/Common/BehaviorTree/Editor/";
+    }
+
     public class BehaviorTreeEditor : EditorWindow
     {
         private BehaviorTreeView treeView;
@@ -26,26 +31,27 @@ namespace CFramework.BT
             // Import UXML
             var visualTree =
                 AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(
-                    "Assets/Scripts/Framework/Common/BehaviorTree/Editor/BehaviorTreeEditor.uxml");
+                    BehaviorTreeEditorConfig.path + "BehaviorTreeEditor.uxml");
             visualTree.CloneTree(root);
 
             // A stylesheet can be added to a VisualElement.
             // The style will be applied to the VisualElement and all of its children.
             var styleSheet =
                 AssetDatabase.LoadAssetAtPath<StyleSheet>(
-                    "Assets/Scripts/Framework/Common/BehaviorTree/Editor/BehaviorTreeEditor.uss");
+                    BehaviorTreeEditorConfig.path + "BehaviorTreeEditor.uss");
             root.styleSheets.Add(styleSheet);
 
             treeView = root.Q<BehaviorTreeView>();
             inspectorView = root.Q<InspectorView>();
+            
             treeView.OnNodeSelected = OnNodeSelectedChanged;
             OnSelectionChange();
         }
-        
+
         private void OnSelectionChange()
         {
             BehaviorTree tree = Selection.activeObject as BehaviorTree;
-            if (tree)
+            if (tree != null)
             {
                 treeView.PopulateView(tree);
             }

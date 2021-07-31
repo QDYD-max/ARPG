@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class RoleStateRun : RoleStateAbstract
 {
-    public float turnSpeed = 10f;
+    public float turnSpeed = 15f;
     public KeyCode sprintKeyboard = KeyCode.LeftShift;
 
     private float turnSpeedMultiplier;
@@ -13,7 +13,7 @@ public class RoleStateRun : RoleStateAbstract
 
     private Animator anim;
     private Vector3 targetDirection;
-    private Vector2 direction;
+    private Vector3 direction;
     private Quaternion freeRotation;
     private Camera mainCamera = Camera.main;
     private float velocity;
@@ -38,28 +38,25 @@ public class RoleStateRun : RoleStateAbstract
     public override void OnUpdate()
     {
         base.OnUpdate();
+        direction = CurRoleFSM.CurRoleCtrl.direction;
+        speed = CurRoleFSM.CurRoleCtrl.curNumeric[NumericType.Speed];
+        CurRoleFSM.CurRoleCtrl.curAnimator.SetInteger(RoleAnimatorCondition.ToRun.ToString(), curStateValue);
 
         #region 移动(使用速度控制)
 
-        direction = CurRoleFSM.CurRoleCtrl.direction;
-        
-        speed = CurRoleFSM.CurRoleCtrl.curNumeric[NumericType.Speed];
-
-        if (CurRoleFSM.CurRoleCtrl.isRunState)
+        if (CurRoleFSM.CurRoleCtrl.gameObject == MainPlayer.Instance.mainPlayer)
         {
-            speed = CurRoleFSM.CurRoleCtrl.curNumeric[NumericType.Speed];
-            curStateValue = 2;
+            UpdateTargetDirection();
         }
         else
         {
-            speed = CurRoleFSM.CurRoleCtrl.curNumeric[NumericType.Speed];
-            curStateValue = 1;
+            turnSpeedMultiplier = 1f;
+            targetDirection = direction;
+            CurRoleFSM.CurRoleCtrl.curCharacterController.Move(direction.normalized * Time.deltaTime * speed);
         }
         
-        CurRoleFSM.CurRoleCtrl.Animator.SetInteger(RoleAnimatorCondition.ToRun.ToString(), curStateValue);
-
-        UpdateTargetDirection();
-        if (direction != Vector2.zero && targetDirection.magnitude > 0.1f)
+        //转向
+        if (direction != Vector3.zero && targetDirection.magnitude > 0.1f)
         {
             Vector3 lookDirection = targetDirection.normalized;
             freeRotation = Quaternion.LookRotation(lookDirection, CurRoleFSM.CurRoleCtrl.transform.up);
@@ -77,7 +74,7 @@ public class RoleStateRun : RoleStateAbstract
         {
             CurRoleFSM.ChangeState(RoleState.Idle, 1);
         }
-
+        
         #endregion
     }
 
@@ -88,10 +85,9 @@ public class RoleStateRun : RoleStateAbstract
     public override void OnLeave()
     {
         base.OnLeave();
-        CurRoleFSM.CurRoleCtrl.Animator.SetInteger(RoleAnimatorCondition.ToRun.ToString(), 0);
+        CurRoleFSM.CurRoleCtrl.curAnimator.SetInteger(RoleAnimatorCondition.ToRun.ToString(), 0);
     }
-
-    #region 转身
+    
 
     private void UpdateTargetDirection()
     {
@@ -105,8 +101,8 @@ public class RoleStateRun : RoleStateAbstract
         // determine the direction the player will face based on direction and the referenceTransform's right and forward directions
         targetDirection = direction.x * right + direction.y * forward;
 
-        CurRoleFSM.CurRoleCtrl.mainCharacterController.Move(targetDirection.normalized * Time.deltaTime * speed);
+        CurRoleFSM.CurRoleCtrl.curCharacterController.Move(targetDirection.normalized * Time.deltaTime * speed);
     }
 
-    #endregion
+
 }

@@ -31,8 +31,6 @@ public class MonsterCreatePoint : MonoBehaviour
                 RoleCtrl roleCtrl = objClone.GetComponent<RoleCtrl>();
                 objClone.AddComponent<RoleMonsterAI>();
 
-                roleCtrl.Init(RoleType.Monster);
-
                 m_CurCount++;
             }
         }

@@ -1,0 +1,206 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8796560390773289405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c34f921157074ceeb4661cb989151d9a, type: 3}
+  m_Name: CloseCombatNode
+  m_EditorClassIdentifier: 
+  state: 0
+  isStarted: 0
+  guid: 6623bea5d9d6d1b4aa96d0a7f65d9623
+  position: {x: 726.6, y: 294.4}
+  allAttackCombos: 3
+  preAttackName: Attack_0
+--- !u!114 &-8538953249352174312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f29b1fcc530a4112b3ec978dad8d8553, type: 3}
+  m_Name: PatrolNode
+  m_EditorClassIdentifier: 
+  state: 0
+  isStarted: 0
+  guid: 04749a9539d45514ea43482a5d5cd895
+  position: {x: 544.8, y: -114.20004}
+--- !u!114 &-7850804325741875913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d2df0f0b83a4d2a9396599d0087120a, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  state: 0
+  isStarted: 0
+  guid: 376be5dab62f24f4789b708aba64c62a
+  position: {x: 218.65002, y: 45.600025}
+  children:
+  - {fileID: -3827546477440211000}
+  - {fileID: -6891046734281285752}
+--- !u!114 &-6891046734281285752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0681be96ebac45c08469c25b08fbab31, type: 3}
+  m_Name: RepeatNode
+  m_EditorClassIdentifier: 
+  state: 0
+  isStarted: 0
+  guid: a18b38dfafb6d3f41bc19fd1b6382a42
+  position: {x: 393.75003, y: 180.00008}
+  child: {fileID: -4826258928833685515}
+--- !u!114 &-4826258928833685515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d2df0f0b83a4d2a9396599d0087120a, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  state: 0
+  isStarted: 0
+  guid: 502703120b71a7745834d71a47fce5fd
+  position: {x: 544.80005, y: 180}
+  children:
+  - {fileID: -1268441048864597681}
+  - {fileID: 6756949398674331727}
+  - {fileID: -8796560390773289405}
+--- !u!114 &-3827546477440211000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3d55bac50ae4a7db6c03f203b9ac5c2, type: 3}
+  m_Name: ParallelNode
+  m_EditorClassIdentifier: 
+  state: 0
+  isStarted: 0
+  guid: b40d4b119a72b8b41bf60de9d1a7c3e1
+  position: {x: 391.2, y: -57.400024}
+  children:
+  - {fileID: -8538953249352174312}
+  - {fileID: -1255870881518769176}
+  parallelType: 1
+--- !u!114 &-3537458658784528881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd88cf31ec004bcb86236546bdce0046, type: 3}
+  m_Name: RootNode
+  m_EditorClassIdentifier: 
+  state: 0
+  isStarted: 0
+  guid: d4be2787afa89764db1171dcc06130a4
+  position: {x: 80, y: 46.399994}
+  child: {fileID: -7850804325741875913}
+--- !u!114 &-1268441048864597681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91176f594eb6451d93f6299f3e35cb06, type: 3}
+  m_Name: ChaseNode
+  m_EditorClassIdentifier: 
+  state: 0
+  isStarted: 0
+  guid: 94c53238efb73dc4f8a0157aaee3ba6a
+  position: {x: 738.4, y: 76}
+  range: 1
+--- !u!114 &-1255870881518769176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66d795ae8f6142999d4e2d536bb10bce, type: 3}
+  m_Name: SearchNode
+  m_EditorClassIdentifier: 
+  state: 0
+  isStarted: 0
+  guid: 3890c886b15d7a3459811c528aa0077b
+  position: {x: 544.8, y: -0.60002947}
+  range: 5
+  angle: 60
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b3cf035c0140c191af4c8c3a397e73, type: 3}
+  m_Name: CloseMonsterBT
+  m_EditorClassIdentifier: 
+  rootNode: {fileID: -3537458658784528881}
+  treeState: 0
+  nodes:
+  - {fileID: -3537458658784528881}
+  - {fileID: -4826258928833685515}
+  - {fileID: -8538953249352174312}
+  - {fileID: -8796560390773289405}
+  - {fileID: -3827546477440211000}
+  - {fileID: -1255870881518769176}
+  - {fileID: -1268441048864597681}
+  - {fileID: -7850804325741875913}
+  - {fileID: -6891046734281285752}
+  - {fileID: 6756949398674331727}
+--- !u!114 &6756949398674331727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f24736b82c0e4323aab96da4f4728a79, type: 3}
+  m_Name: WaitNode
+  m_EditorClassIdentifier: 
+  state: 0
+  isStarted: 0
+  guid: 9cdb3c7bc0af55c4f9798b3732299921
+  position: {x: 738.4, y: 180}
+  duration: 0.5

@@ -17,7 +17,7 @@ namespace CFramework
         
         public void Clear()
         {
-            PoolManager.Instance.Clear();
+            PoolManager.Instance.ClearAll();
             AudioManager.Instance.Clear();
             UIManager.Instance.Clear();
             ResourceLoader.Clear();

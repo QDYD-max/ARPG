@@ -1,6 +1,8 @@
 ﻿
 
-namespace CFramework.BT
+using UnityEngine;
+
+namespace CFramework
 {
     public class RootNode : Node
     {
@@ -26,10 +28,10 @@ namespace CFramework.BT
             return node;
         }
 
-        public override void Activate(Database database)
+        public override void Activate(GameObject go)
         {
-            base.Activate(database);
-            child.Activate(database);
+            base.Activate(go);
+            child.Activate(go);
         }
     }
 }

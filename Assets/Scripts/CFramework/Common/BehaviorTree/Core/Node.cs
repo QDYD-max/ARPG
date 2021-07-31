@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace CFramework.BT
+namespace CFramework
 {
     public enum NodeState
     {
@@ -16,7 +16,7 @@ namespace CFramework.BT
         [HideInInspector] public bool isStarted = false;
         [HideInInspector] public string guid;
         [HideInInspector] public Vector2 position;
-        protected Database _database;
+        protected GameObject entity;
         private bool activated=false;
 
         public NodeState Update()
@@ -38,9 +38,9 @@ namespace CFramework.BT
             return state;
         }
         
-        public virtual void Activate (Database database) {
+        public virtual void Activate (GameObject go) {
             if (activated) return ;
-            this._database = database;
+            this.entity = go;
             activated = true;
         }
 

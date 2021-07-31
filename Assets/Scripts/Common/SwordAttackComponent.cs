@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace CFramework
 {
-    public class SwordAttackComponent : MonoBehaviour
+    public class SwordAttackComponent : SkillComponent
     {
         private RoleCtrl _roleCtrl;
         private float timer;
@@ -35,10 +35,10 @@ namespace CFramework
                 if (attackCombo > 3)
                     attackCombo = 1;
                 
-                _roleCtrl.Animator.Play("Attack_0" + attackCombo);
+                _roleCtrl.curAnimator.Play("Attack_0" + attackCombo);
 
                 //mainPlayerCtrl.curRoleFSM.ChangeState(RoleState.Attack, attackCombo);
-                timer = _roleCtrl.Animator.GetCurrentAnimatorClipInfo(0).Length;
+                timer = _roleCtrl.curAnimator.GetCurrentAnimatorClipInfo(0).Length;
                 attackCombo++;
             }
         }

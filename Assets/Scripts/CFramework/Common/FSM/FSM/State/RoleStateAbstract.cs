@@ -32,7 +32,7 @@ public abstract class RoleStateAbstract
     /// </summary>
     public virtual void OnUpdate()
     {
-        CurAnimatorStateInfo = CurRoleFSM.CurRoleCtrl.Animator.GetCurrentAnimatorStateInfo(0);
+        CurAnimatorStateInfo = CurRoleFSM.CurRoleCtrl.curAnimator.GetCurrentAnimatorStateInfo(0);
     }
 
     /// <summary>

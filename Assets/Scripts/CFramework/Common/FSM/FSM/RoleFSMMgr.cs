@@ -31,7 +31,6 @@ public class RoleFSMMgr
         {
             [RoleState.Idle] = new RoleStateIdle(this),
             [RoleState.Run] = new RoleStateRun(this),
-            [RoleState.Attack] = new RoleStateAttack(this),
             [RoleState.Hurt] = new RoleStateHurt(this),
             [RoleState.Die] = new RoleStateDie(this)
         };

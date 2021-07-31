@@ -1,13 +1,14 @@
 ﻿using System;
 using UnityEngine;
 
-namespace CFramework.BT
+namespace CFramework
 {
     public class SequencerNode : CompositeNode
     {
         private int _index;
         protected override void OnStart()
         {
+            Debug.Log("开始此轮");
             _index = 0;
         }
 
@@ -15,13 +16,13 @@ namespace CFramework.BT
         {
             switch (children[_index].Update())
             {
-                case NodeState.Running:
-                    return NodeState.Running;
+                case NodeState.Failure:
+                    return NodeState.Failure;
+                //case NodeState.Running:
+                //    return NodeState.Running;
                 case NodeState.Success:
                     ++_index;
                     break;
-                case NodeState.Failure:
-                    return NodeState.Failure;
             }
 
             return children.Count == _index ? NodeState.Success : NodeState.Running;

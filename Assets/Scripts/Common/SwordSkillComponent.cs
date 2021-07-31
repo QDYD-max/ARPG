@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CFramework
 {
-    public class SwordSkillComponent : MonoBehaviour
+    public class SwordSkillComponent : SkillComponent
     {
         private Coroutine _coBurningScope;
         

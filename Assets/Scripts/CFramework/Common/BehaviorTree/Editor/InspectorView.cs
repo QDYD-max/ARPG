@@ -2,7 +2,7 @@
 using UnityEngine.UIElements;
 using UnityEditor.Experimental.GraphView;
 
-namespace CFramework.BT
+namespace CFramework
 {
     public class InspectorView : VisualElement
     {
