@@ -6,15 +6,18 @@ namespace CFramework
 {
     public class GameManager : MonoSingleton<GameManager>
     {
-        
-
         private void Awake()
         {
-            
             MainPlayer.Instance.OnStartUP();
             MonoManager.Instance.OnStartUP();
+            UIManager.Instance.OnStartUP();
         }
-        
+
+        private void Start()
+        {
+            
+        }
+
         public void Clear()
         {
             PoolManager.Instance.ClearAll();

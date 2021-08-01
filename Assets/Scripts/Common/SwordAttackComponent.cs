@@ -36,6 +36,7 @@ namespace CFramework
                     attackCombo = 1;
                 
                 _roleCtrl.curAnimator.Play("Attack_0" + attackCombo);
+                
 
                 //mainPlayerCtrl.curRoleFSM.ChangeState(RoleState.Attack, attackCombo);
                 timer = _roleCtrl.curAnimator.GetCurrentAnimatorClipInfo(0).Length;

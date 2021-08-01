@@ -38,12 +38,11 @@ public class RoleCtrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CheckGrounded();
         if (curRoleFSM != null)
         {
             curRoleFSM.OnUpdate();
         }
-
-        //CheckGrounded();
     }
     
 
@@ -54,13 +53,13 @@ public class RoleCtrl : MonoBehaviour
         curNumeric[NumericType.HpBase] += battle.value;
         curRoleFSM.ChangeState(curNumeric[NumericType.Hp] < 0.0001f ? RoleState.Die : RoleState.Hurt, 1);
     }
-    
+
 
     void CheckGrounded()
     {
         if (!curCharacterController.isGrounded)
         {
-            curCharacterController.Move((transform.position + new Vector3(0, -1000, 0)) - transform.position);
+            curCharacterController.Move((new Vector3(0, -1000, 0)));
         }
     }
 }

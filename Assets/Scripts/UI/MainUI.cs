@@ -80,7 +80,7 @@ public class MainUI : UIPanel
         imageSkill3Cd = GetControl<Image>("Image_Skill3Cd");
 
         #region 判空
-
+/*
 #if UNITY_EDITOR  
         if (textMainPlayerHp == null)
         {
@@ -118,7 +118,7 @@ public class MainUI : UIPanel
         {
             Debug.LogError(imageSkill3Cd.name + " missing");
         }
-#endif
+#endif*/
 
         #endregion
 

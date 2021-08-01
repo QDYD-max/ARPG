@@ -26,6 +26,7 @@ public class MainPlayer : MonoSingleton<MainPlayer>, PlayerInput.IPlayerActions
 
     //连击输入相关，具体由动画事件修改
     public bool isAttack = false;
+    private WeaponState _curState;
 
     private float _mosueDeltaX = 0;
     private float _mosueDeltaY = 0;
@@ -61,56 +62,53 @@ public class MainPlayer : MonoSingleton<MainPlayer>, PlayerInput.IPlayerActions
 
         _virtueCamera = _vCamera.GetComponent<CinemachineVirtualCamera>();
         _virtueCamera.Follow = mainPlayer.transform;
-        
-        
-        ChangeWeapon(WeaponState.Gun);
+
+        InitPlayer();
+        ChangeWeapon(WeaponState.Sword);
     }
 
-    void OnGUI()
+    void InitPlayer()
     {
-        if (GUILayout.Button("Init Player"))
-        {
-            NumericComponent playerNumeric = mainPlayerCtrl.curNumeric;
+        NumericComponent playerNumeric = mainPlayerCtrl.curNumeric;
 
-            playerNumeric.Initialize(NumericType.Speed);
-            playerNumeric.Set(NumericType.SpeedBase, 10);
+        playerNumeric.Initialize(NumericType.Speed);
+        playerNumeric.Set(NumericType.SpeedBase, 10);
 
-            playerNumeric.Initialize(NumericType.MaxHp);
-            playerNumeric.Initialize(NumericType.Hp);
+        playerNumeric.Initialize(NumericType.MaxHp);
+        playerNumeric.Initialize(NumericType.Hp);
 
-            playerNumeric.Set(NumericType.MaxHpBase, 2000);
-            playerNumeric.Set(NumericType.HpBase, 1000);
+        playerNumeric.Set(NumericType.MaxHpBase, 2000);
+        playerNumeric.Set(NumericType.HpBase, 1000);
 
-            playerNumeric.Initialize(NumericType.MaxShield);
-            playerNumeric.Initialize(NumericType.Shield);
+        playerNumeric.Initialize(NumericType.MaxShield);
+        playerNumeric.Initialize(NumericType.Shield);
 
-            playerNumeric.Set(NumericType.MaxShieldBase, 30);
-            playerNumeric.Set(NumericType.ShieldBase, 10);
+        playerNumeric.Set(NumericType.MaxShieldBase, 30);
+        playerNumeric.Set(NumericType.ShieldBase, 10);
 
-            playerNumeric.Initialize(NumericType.MaxEnergy);
-            playerNumeric.Initialize(NumericType.Energy);
+        playerNumeric.Initialize(NumericType.MaxEnergy);
+        playerNumeric.Initialize(NumericType.Energy);
 
-            playerNumeric.Set(NumericType.MaxEnergyBase, 300);
-            playerNumeric.Set(NumericType.EnergyBase, 100);
+        playerNumeric.Set(NumericType.MaxEnergyBase, 300);
+        playerNumeric.Set(NumericType.EnergyBase, 100);
 
-            playerNumeric.Initialize(NumericType.MaxSkillCd1);
-            playerNumeric.Initialize(NumericType.SkillCd1);
+        playerNumeric.Initialize(NumericType.MaxSkillCd1);
+        playerNumeric.Initialize(NumericType.SkillCd1);
 
-            playerNumeric.Set(NumericType.MaxSkillCd1Base, 10);
-            playerNumeric.Set(NumericType.SkillCd1Base, 10);
+        playerNumeric.Set(NumericType.MaxSkillCd1Base, 10);
+        playerNumeric.Set(NumericType.SkillCd1Base, 10);
 
-            playerNumeric.Initialize(NumericType.MaxSkillCd2);
-            playerNumeric.Initialize(NumericType.SkillCd2);
+        playerNumeric.Initialize(NumericType.MaxSkillCd2);
+        playerNumeric.Initialize(NumericType.SkillCd2);
 
-            playerNumeric.Set(NumericType.MaxSkillCd2Base, 10);
-            playerNumeric.Set(NumericType.SkillCd2Base, 10);
+        playerNumeric.Set(NumericType.MaxSkillCd2Base, 10);
+        playerNumeric.Set(NumericType.SkillCd2Base, 10);
 
-            playerNumeric.Initialize(NumericType.MaxSkillCd3);
-            playerNumeric.Initialize(NumericType.SkillCd3);
+        playerNumeric.Initialize(NumericType.MaxSkillCd3);
+        playerNumeric.Initialize(NumericType.SkillCd3);
 
-            playerNumeric.Set(NumericType.MaxSkillCd3Base, 10);
-            playerNumeric.Set(NumericType.SkillCd3Base, 10);
-        }
+        playerNumeric.Set(NumericType.MaxSkillCd3Base, 10);
+        playerNumeric.Set(NumericType.SkillCd3Base, 10);
     }
 
 
@@ -230,15 +228,37 @@ public class MainPlayer : MonoSingleton<MainPlayer>, PlayerInput.IPlayerActions
         }
     }
 
+    private void OnGUI()
+    {
+        if (GUILayout.Button("ChangeState"))
+        {
+            switch (_curState)
+            {
+                case WeaponState.Sword:
+                    ChangeWeapon(WeaponState.Gun);
+                    break;
+                case WeaponState.Gun:
+                    ChangeWeapon(WeaponState.Sword);
+                    break;
+            }
+        }
+    }
+
     public void ChangeWeapon(WeaponState state)
     {
         ClearWeaponSkill();
+        _curState = state;
         switch (state)
         {
             case WeaponState.Sword:
+                mainPlayer.GetComponent<Animator>().runtimeAnimatorController =
+                    mainPlayer.GetComponent<AnimEvents>().AnimatorSword;
+                Attack = mainPlayer.GetComponent<SwordAttackComponent>().Execute;
                 Skill1 = mainPlayer.GetComponent<SwordSkillComponent>().Execute;
                 break;
             case WeaponState.Gun:
+                mainPlayer.GetComponent<Animator>().runtimeAnimatorController =
+                    mainPlayer.GetComponent<AnimEvents>().AnimatorGun;
                 Attack = mainPlayer.GetComponent<LesserGunAttackComponent>().Execute;
                 AttackCancle = mainPlayer.GetComponent<LesserGunAttackComponent>().Cancle;
                 Skill1 = mainPlayer.GetComponent<LesserGunSkillComponent>().Execute;
@@ -314,8 +334,9 @@ public class MainPlayer : MonoSingleton<MainPlayer>, PlayerInput.IPlayerActions
 
     private void Init3RdCamera()
     {
-        GameObject cameraPrefab = ResourceLoader.Load<GameObject>(ResourceType.Game, "CM3rdPersonNormal");
-        _vCamera = Instantiate(cameraPrefab);
+        //GameObject cameraPrefab = ResourceLoader.Load<GameObject>(ResourceType.Game, "CM3rdPersonNormal");
+        //_vCamera = Instantiate(cameraPrefab);
+        _vCamera = GameObject.Find("CM3rdPersonNormal");
     }
 
     private float CheckAngle(float value) // 将大于180度角进行以负数形式输出

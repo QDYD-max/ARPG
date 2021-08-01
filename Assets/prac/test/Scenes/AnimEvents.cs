@@ -2,17 +2,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using CFramework;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class AnimEvents : MonoBehaviour
 {
+    [SerializeField] public AnimatorController AnimatorSword;
+    [SerializeField] public AnimatorController AnimatorGun;
     private void Awake()
     {
         
     }
 
-    public void AttackDamage(float AttackDistance)
+    public void AttackDamage()
     {
         //AudioMgr.instance.PlaySound("Hit");
 
@@ -20,6 +23,8 @@ public class AnimEvents : MonoBehaviour
         float AttackAngle = 140;
         // 玩家正前方的向量
         Vector3 norVec = transform.rotation * Vector3.forward;
+
+        float AttackDistance = 10f;
 
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, AttackDistance, 1 << LayerMask.NameToLayer($"Enemy"));
         //Debug.Log(hitColliders.Length);

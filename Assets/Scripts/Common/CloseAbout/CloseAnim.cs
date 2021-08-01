@@ -36,6 +36,10 @@ public class CloseAnim : MonoBehaviour
         {
             foreach (var hitCollider in hitColliders)
             {
+                if (!hitCollider.gameObject.tag.Equals("Player"))
+                {
+                    break;
+                }
                 if(hitCollider!= transform.GetComponent<CharacterController>())
                 {
                     // 玩家与敌人的方向向量
